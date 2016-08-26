@@ -9,7 +9,12 @@ To prepare the server:
 > bundle install
 
 To run the server:
-> cd server
-> rackup
+> ruby server/app.rb
 
-View at: http://localhost:9292
+## Ruby client
+To prepare the client:
+> cd client/ruby
+> bundle install
+
+To run the client
+> ruby client/ruby/client.rb
