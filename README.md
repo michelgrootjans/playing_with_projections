@@ -24,5 +24,5 @@ bundle install
 
 To run the client
 ```
-ruby client/ruby/client.rb
+ruby clients/ruby/client.rb
 ```
