@@ -5,11 +5,10 @@ require 'date'
 def generate_game
   data = {
     event: {
-
-    }
-    "game_created",
-    message_id: SecureRandom.uuid,
-    timestamp: DateTime.now,
+      type: 'game_created',
+      id: SecureRandom.uuid,
+      timestamp: DateTime.now
+    },
     payload: {
       game: {
         id: SecureRandom.uuid,
