@@ -1,40 +1,8 @@
 require 'faker'
 require 'pry'
 
-class GameOfThronesTheme
-  def title
-    Faker::Book.title
-  end
-end
+require_relative 'game.rb'
 
-class Game
-  attr_reader :id, :title, :created_at, :published_at
-  def initialize
-    @id = SecureRandom.uuid
-    @created_at = Faker::Time.between(DateTime.now - 365, DateTime.now)
-    @published_at = created_at + Random.new.rand(60*60*24)
-    @theme = GameOfThronesTheme.new
-    @title = @theme.title
-  end
-
-  def new_quiz
-    Quiz.new(self)
-  end
-end
-
-class Quiz
-  attr_reader :id, :game_id, :started_at, :ended_at
-  def initialize(game)
-    @id = SecureRandom.uuid
-    @game_id = game.id
-    @started_at = Faker::Time.between(game.published_at, DateTime.now)
-    @ended_at = @started_at + 10 + Random.new.rand(60*60)
-  end
-
-  def ended?
-    ended_at < Time.now
-  end
-end
 
 class HistoryGenerator
   def generate_history(number_of_games)
@@ -47,14 +15,21 @@ class HistoryGenerator
     game = Game.new
     events = []
     events << game_created(game)
+
+    ([5, 10, 20].sample).times do
+      question = game.new_question
+      events << question_added(question)
+    end
+
     events << game_published(game)
+
     (2..Random.new.rand(20)).each do
       quiz = game.new_quiz
       events << quiz_started(quiz)
       events << quiz_ended(quiz) if quiz.ended?
     end
-    events.flatten.compact
 
+    events.flatten.compact
   end
 
   def game_created(game)
@@ -64,6 +39,20 @@ class HistoryGenerator
             id: game.id,
             title: game.title
         }}
+    }
+  end
+
+  def question_added(question)
+    {
+        event: event_created('question_added_to_game', question.created_at),
+        payload: {
+            game_id: question.game_id,
+            question: {
+                id: question.id,
+                text: question.text,
+                right_answer: question.right_answer
+            }
+        }
     }
   end
 
