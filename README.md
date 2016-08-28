@@ -10,6 +10,11 @@ cd server
 bundle install
 ```
 
+To generate some data
+```
+ruby server/generate.rb
+```
+
 To run the server:
 ```
 ruby server/app.rb
