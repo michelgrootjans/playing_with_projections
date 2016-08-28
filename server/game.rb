@@ -5,7 +5,12 @@ class Game
     @id = SecureRandom.uuid
     @created_at = Faker::Time.between(DateTime.now - 365, DateTime.now)
     @published_at = created_at + Random.new.rand(60*60*24)
-    @theme = GameOfThronesTheme.new
+    @theme = [
+        GameOfThronesTheme,
+        StarWarsTheme,
+        SuperheroTheme,
+        PokemonTheme,
+    ].sample.new
     @title = @theme.title
   end
 
@@ -63,3 +68,57 @@ class GameOfThronesTheme
   end
 end
 
+class StarWarsTheme
+  def title
+    [
+        lambda{ "Vehicles in #{Faker::StarWars.planet}" },
+        lambda{ "The battle of #{Faker::StarWars.planet}" },
+        lambda{ "#{Faker::StarWars.character}'s quiz" },
+        lambda{ "The #{Faker::StarWars.planet} quiz" },
+        lambda{ "Only for #{Faker::StarWars.species}s" },
+        lambda{ Faker::StarWars.quote },
+    ].sample.call
+  end
+
+  def question_and_answer
+    [
+        lambda{ ["Who owns #{Faker::StarWars.droid}?", Faker::StarWars.character] },
+        lambda{ ["What vehicle does #{Faker::StarWars.character} use?", Faker::StarWars.vehicle] },
+        lambda{ ["What species is #{Faker::StarWars.character}?", Faker::StarWars.specie] },
+        lambda{ ["Who said '#{Faker::StarWars.quote}'?", Faker::StarWars.character] },
+        lambda{ ["Where is #{Faker::StarWars.character} from?", Faker::StarWars.planet] },
+    ].sample.call
+  end
+end
+
+class SuperheroTheme
+  def title
+    [
+        lambda{ "Superhero quiz" },
+        lambda{ "Superpowers!" },
+    ].sample.call
+  end
+
+  def question_and_answer
+    [
+        lambda{ ["What power does #{Faker::Superhero.name} have?", Faker::Superhero.power] },
+        lambda{ ["Who has #{Faker::Superhero.power}?", Faker::Superhero.name] },
+    ].sample.call
+  end
+end
+
+class PokemonTheme
+  def title
+    [
+        lambda{ "Pokemon!" },
+        lambda{ "Gotta catch em all" },
+    ].sample.call
+  end
+
+  def question_and_answer
+    [
+        lambda{ ["Where can i find #{Faker::Pokemon.name}?", Faker::Pokemon.location] },
+        lambda{ ["What pokemon can i find in #{Faker::Pokemon.location}?", Faker::Pokemon.name] },
+    ].sample.call
+  end
+end
