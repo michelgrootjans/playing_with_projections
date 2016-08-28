@@ -2,7 +2,7 @@
 Preparation of a workshop
 
 ## Server
-The implementation server is a sinatra app.
+The server implementation is a sinatra app.
 
 To prepare the server:
 ```
@@ -25,4 +25,8 @@ bundle install
 To run the client
 ```
 ruby clients/ruby/client.rb
+```
+or to read from a specific stream
+```
+ruby clients/ruby/client.rb stream1
 ```
