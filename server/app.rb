@@ -3,7 +3,7 @@ require 'sinatra'
 set :port, 4567
 
 get '/' do
-  redirect to('/default')
+  File.read ("streams/default.json")
 end
 
 get '/:file_name' do |file_name|
