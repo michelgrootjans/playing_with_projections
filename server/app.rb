@@ -3,7 +3,7 @@ require 'sinatra'
 set :port, 4567
 
 get '/' do
-  redirect to('/stream1')
+  redirect to('/default')
 end
 
 get '/:file_name' do |file_name|

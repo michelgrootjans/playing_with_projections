@@ -1,0 +1,9 @@
+[
+  {
+    "event": "successfully_fetched_the_default_stream",
+    "payload": {
+      "message": "You probably meant to got to a specific stream.",
+      "hint": "Try changing 'default' in the URL to the name of the stream you meant to access."
+    }
+  }
+]
