@@ -1,5 +1,10 @@
 require 'json'
 require 'rest-client'
 
-response = RestClient.get 'http://localhost:4567/'
-puts JSON.parse(response,:symbolize_names => true)
+base_uri = 'http://localhost:4567'
+stream = "#{base_uri}/#{ARGV.first}"
+puts "Reading from '#{stream}'"
+
+response = RestClient.get stream
+hashed_response = JSON.parse(response)
+puts hashed_response.inspect
