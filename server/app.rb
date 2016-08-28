@@ -7,5 +7,5 @@ get '/' do
 end
 
 get '/:file_name' do |file_name|
-  File.read ("#{file_name}.json")
+  File.read ("streams/#{file_name}.json")
 end
