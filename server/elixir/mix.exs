@@ -17,7 +17,7 @@ defmodule Quizzy.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Quizzy, []},
-     applications: [:phoenix, :cowboy, :logger, :gettext]]
+     applications: [:phoenix, :cowboy, :logger, :gettext, :timex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,6 +30,8 @@ defmodule Quizzy.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.1.4"},
      {:gettext, "~> 0.9"},
+     {:timex, "~> 3.0"},
+     {:uuid, "~> 1.1"},
      {:cowboy, "~> 1.0"}]
   end
 end

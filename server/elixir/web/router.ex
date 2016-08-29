@@ -7,5 +7,7 @@ defmodule Quizzy.Router do
 
   scope "/api", Quizzy do
     pipe_through :api
+
+    resources "/stream", StreamController, only: [:show]
   end
 end
