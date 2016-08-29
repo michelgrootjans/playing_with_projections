@@ -32,6 +32,7 @@ defmodule Quizzy.Mixfile do
      {:gettext, "~> 0.9"},
      {:timex, "~> 3.0"},
      {:uuid, "~> 1.1"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end
