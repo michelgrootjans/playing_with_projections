@@ -1,5 +1,6 @@
 defmodule QuizzyClient do
     alias QuizzyClient.Events.{QuizWasCreated, PlayerHasRegistered, QuestionAddedToGame}
+    alias QuizzyClient.Projections.Players
 
     def main do
         %{body: body} = HTTPotion.get "http://localhost:4000/api/stream/1"
@@ -7,6 +8,10 @@ defmodule QuizzyClient do
         events = body
         |> Poison.Parser.parse!(keys: :atoms!)
         |> Enum.map(&(parse(&1)))
+
+        players = Enum.reduce(events, Players.new, fn event, state -> Players.project(state, event) end)
+
+        Players.player_id_exists?(players, 1)
     end
 
     def parse(%{event: name, data: data}) do
