@@ -2,22 +2,25 @@
 Preparation of a workshop
 
 ## Server
+
+### Ruby
+
 The server implementation is a sinatra app.
 
 To prepare the server:
 ```
-cd server
+cd server/ruby
 bundle install
 ```
 
 To generate some data
 ```
-ruby server/generate.rb
+ruby server/ruby/generate.rb
 ```
 
 To run the server:
 ```
-ruby server/app.rb
+ruby server/ruby/app.rb
 ```
 
 ## Ruby client
