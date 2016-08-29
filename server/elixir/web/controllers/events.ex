@@ -1,4 +1,7 @@
 defmodule Quizzy.Events do
+  @moduledoc """
+  List of the quizzy domain events
+  """
   defmodule QuizWasCreated do
     @enforce_keys [:event_id, :created_at, :quiz_id, :quiz_title, :owner_id]
     defstruct [:event_id, :created_at, :quiz_id, :quiz_title, :owner_id]

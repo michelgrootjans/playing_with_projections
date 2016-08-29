@@ -1,4 +1,8 @@
 defmodule Quizzy.StreamController do
+    @moduledoc """
+    Controller module for event streams
+    """
+
     use Quizzy.Web, :controller
     use Timex
 
@@ -16,12 +20,20 @@ defmodule Quizzy.StreamController do
             created_at: Timex.now,
             quiz_id: 1,
             quiz_title: "Cities of Europe",
-            owner_id: 1}
+            owner_id: 1},
+        %Events.QuestionAddedToGame{
+            event_id: UUID.uuid4(),
+            created_at: Timex.now,
+            question_id: 1,
+            quiz_id: 1,
+            question: "What is the capital of France?",
+            answer: "Paris"
+        },
     ]}
 
     def show(conn, %{"id" => id}) do
-        {_id, _} = Integer.parse(id)
-        stream = Map.fetch!(@repo, _id)
+        {id, _} = Integer.parse(id)
+        stream = Map.fetch!(@repo, id)
         render conn, "show.json", stream: stream
     end
 

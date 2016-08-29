@@ -1,7 +1,7 @@
 defmodule Quizzy.StreamView do
     use Quizzy.Web, :view
 
-    alias Quizzy.Events.{PlayerHasRegistered, QuizWasCreated}
+    alias Quizzy.Events.{PlayerHasRegistered, QuizWasCreated, QuestionAddedToGame}
 
     def render("show.json", %{stream: stream}) do
         render_one(stream, Quizzy.StreamView, "event.json")
@@ -18,5 +18,9 @@ defmodule Quizzy.StreamView do
 
     def render_event(%QuizWasCreated{} = event) do
         %{event: "QuizWasCreated", data: event}
+    end
+
+    def render_event(%QuestionAddedToGame{} = event) do
+        %{event: "QuestionWasAddedToGame", data: event}
     end
 end
