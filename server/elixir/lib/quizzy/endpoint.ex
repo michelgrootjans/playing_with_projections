@@ -33,5 +33,7 @@ defmodule Quizzy.Endpoint do
     key: "_quizzy_key",
     signing_salt: "uZl6VPjr"
 
+  plug CORSPlug
+
   plug Quizzy.Router
 end

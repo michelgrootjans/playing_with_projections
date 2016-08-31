@@ -33,6 +33,7 @@ defmodule Quizzy.Mixfile do
      {:timex, "~> 3.0"},
      {:uuid, "~> 1.1"},
      {:cowboy, "~> 1.0"},
+     {:cors_plug, "~> 1.1"},
      {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end
