@@ -21,6 +21,6 @@ defmodule Quizzy.StreamView do
     end
 
     def render_event(%QuestionAddedToGame{} = event) do
-        %{event: "QuestionWasAddedToGame", data: event}
+        %{event: "QuestionAddedToGame", data: event}
     end
 end
