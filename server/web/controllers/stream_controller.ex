@@ -33,45 +33,7 @@ defmodule Quizzy.StreamController do
 
         file
         |> Poison.Parser.parse!(keys: :atoms!)
-        |> Enum.map(&(json_to_struct(&1)))
+        |> Enum.map(&(Events.json_to_event(&1)))
     end
 
-    defp json_to_struct(%{type: type, id: id, timestamp: timestamp, payload: payload}) do
-        case type do
-            "PlayerHasRegistered" ->
-                %Events.PlayerHasRegistered{
-                    meta: meta(id, timestamp),
-                    first_name: payload.first_name,
-                    last_name: payload.last_name,
-                    player_id: payload.player_id
-                }
-            "QuizWasCreated" ->
-                %Events.QuizWasCreated{
-                    meta: meta(id, timestamp),
-                    quiz_id: payload.quiz_id,
-                    quiz_title: payload.quiz_title,
-                    owner_id: payload.owner_id
-                }
-            "QuizWasPublished" ->
-                %Events.QuizWasPublished{
-                    meta: meta(id, timestamp),
-                    quiz_id: payload.quiz_id,
-                }
-            "QuestionAddedToQuiz" ->
-                %Events.QuestionAddedToQuiz{
-                    meta: meta(id, timestamp),
-                    quiz_id: payload.quiz_id,
-                    question_id: payload.question_id,
-                    question: payload.question,
-                    answer: payload.answer
-                }
-        end
-    end
-
-    defp meta(id, timestamp) do
-        %Events.Meta{
-            id: UUID.uuid4(),
-            timestamp: Timex.now
-        }
-    end
 end

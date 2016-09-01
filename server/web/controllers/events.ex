@@ -68,7 +68,101 @@ defmodule Quizzy.Events do
   end
 
   defmodule GameWasFinished do
-    @enforce_keys [:meta, :game_id, :question_id]
-    defstruct [:meta, :game_id, :question_id]
+    @enforce_keys [:meta, :game_id]
+    defstruct [:meta, :game_id]
   end
+
+    def json_to_event(%{type: type, id: id, timestamp: timestamp, payload: payload}) do
+        case type do
+            "QuizWasCreated" ->
+                %QuizWasCreated{
+                    meta: meta(id, timestamp),
+                    quiz_id: payload.quiz_id,
+                    quiz_title: payload.quiz_title,
+                    owner_id: payload.owner_id
+                }
+            "QuizWasPublished" ->
+                %QuizWasPublished{
+                    meta: meta(id, timestamp),
+                    quiz_id: payload.quiz_id,
+                }
+            "PlayerHasRegistered" ->
+                %PlayerHasRegistered{
+                    meta: meta(id, timestamp),
+                    first_name: payload.first_name,
+                    last_name: payload.last_name,
+                    player_id: payload.player_id
+                }
+            "QuestionAddedToQuiz" ->
+                %QuestionAddedToQuiz{
+                    meta: meta(id, timestamp),
+                    quiz_id: payload.quiz_id,
+                    question_id: payload.question_id,
+                    question: payload.question,
+                    answer: payload.answer
+                }
+            "GameWasOpened" ->
+                %GameWasOpened{
+                    meta: meta(id, timestamp),
+                    quiz_id: payload.quiz_id,
+                    game_id: payload.game_id
+                }
+            "GameWasStarted" ->
+                %GameWasStarted{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id
+                }
+            "PlayerJoinedGame" ->
+                %PlayerJoinedGame{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                    player_id: payload.player_id
+                }
+            "PlayerLeftGame" ->
+                %PlayerLeftGame{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                    player_id: payload.player_id
+                }
+            "QuestionWasOpened" ->
+                %QuestionWasOpened{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                    question_id: payload.question_id
+
+                }
+            "AnswerWasGiven" ->
+                %AnswerWasGiven{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                    question_id: payload.question_id,
+                    answer: payload.answer,
+                    answer_time: payload.answer_time
+                }
+            "QuestionTimedOut" ->
+                %QuestionTimedOut{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                    question_id: payload.question_id,
+                }
+            "QuestionWasClosed" ->
+                %QuestionWasClosed{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                    question_id: payload.question_id,
+                }
+            "GameWasFinished" ->
+                %GameWasFinished{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                }
+        end
+    end
+
+    defp meta(id, timestamp) do
+        %Meta{
+            id: UUID.uuid4(),
+            timestamp: Timex.now
+        }
+    end
 end
