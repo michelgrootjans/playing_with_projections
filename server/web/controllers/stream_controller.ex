@@ -16,7 +16,7 @@ defmodule Quizzy.StreamController do
     end
 
     defp init do
-        %{1 => [
+        %{0 => [
             %Events.PlayerHasRegistered{
                 meta: meta(),
                 player_id: 1,

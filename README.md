@@ -28,6 +28,12 @@ to run the test continuously:
 mix test.watch
 ```
 
+### api
+
+`/stream/:id`
+
+`/stream/0` is used to test the clients
+
 ## Generator
 
 To prepare the generator:
