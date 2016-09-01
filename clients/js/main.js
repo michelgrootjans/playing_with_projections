@@ -4,7 +4,7 @@ function fetchStream(stream) {
     const options = {
         hostname: 'localhost',
         port: 4000,
-        path: `/api/stream/${stream}`,
+        path: `/stream/${stream}`,
         method: 'GET'
     };
 
@@ -22,10 +22,10 @@ function fetchStream(stream) {
 }
 
 function registeredPlayersProjection(events) {
-    return events.reduce((acc, {event, data}) => {
-        switch (event) {
+    return events.reduce((acc, {type, payload}) => {
+        switch (type) {
             case 'PlayerHasRegistered': {
-                acc[data.player_id] = {first_name: data.first_name, last_name: data.last_name}
+                acc[payload.player_id] = {first_name: payload.first_name, last_name: payload.last_name}
                 return acc;
             }
             default: return acc
