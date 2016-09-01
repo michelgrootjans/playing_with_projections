@@ -20,3 +20,6 @@ config :logger, :console, format: "[$level] $message\n"
 # Do not configure such in production as keeping
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
+
+# Set mix test.watch to clear the console before each run
+config :mix_test_watch, clear: true

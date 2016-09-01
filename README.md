@@ -20,43 +20,33 @@ mix phoenix.server
 ```
 
 to run the tests:
-
 ```bash
 mix test
 ```
-
-### Ruby
-
-The server implementation is a sinatra app.
-
-To prepare the server:
+to run the test continuously:
+```bash
+mix test.watch
 ```
-cd server/ruby
+
+### api
+
+`/stream/:id`
+
+`/stream/0` is used to test the clients
+
+## Generator
+
+To prepare the generator:
+```
+cd generator
 bundle install
 ```
 
 To generate some data
 ```
-ruby server/ruby/generate.rb
+ruby generator/generate.rb
 ```
 
-To run the server:
-```
-ruby server/ruby/app.rb
-```
+## Clients
 
-## Ruby client
-To prepare the client:
-```
-cd client/ruby
-bundle install
-```
-
-To run the client
-```
-ruby clients/ruby/client.rb
-```
-or to read from a specific stream
-```
-ruby clients/ruby/client.rb stream1
-```
+Look in the client directories
