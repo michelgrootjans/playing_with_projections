@@ -17,7 +17,7 @@ defmodule Quizzy.Events do
     defstruct [:event_id, :created_at, :player_id, :first_name, :last_name]
   end
 
-  defmodule QuestionAddedToGame do
+  defmodule QuestionAddedToQuiz do
     @enforce_keys [:event_id, :created_at, :question_id, :quiz_id, :question, :answer]
     defstruct [:event_id, :created_at, :question_id, :quiz_id, :question, :answer]
   end
@@ -47,9 +47,14 @@ defmodule Quizzy.Events do
     defstruct [:event_id, :created_at, :game_id, :question_id]
   end
 
-  defmodule QuestionWasAnswered do
+  defmodule AnswerWasGiven do
     @enforce_keys [:event_id, :created_at, :game_id, :question_id, :answer, :answer_time]
     defstruct [:event_id, :created_at, :game_id, :question_id, :answer, :answer_time]
+  end
+
+  defmodule QuestionTimedOut do
+    @enforce_keys [:event_id, :created_at, :game_id, :question_id]
+    defstruct [:event_id, :created_at, :game_id, :question_id]
   end
 
   defmodule QuestionWasClosed do

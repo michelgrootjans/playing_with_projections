@@ -21,7 +21,7 @@ defmodule Quizzy.StreamController do
             quiz_id: 1,
             quiz_title: "Cities of Europe",
             owner_id: 1},
-        %Events.QuestionAddedToGame{
+        %Events.QuestionAddedToQuiz{
             event_id: UUID.uuid4(),
             created_at: Timex.now,
             question_id: 1,
