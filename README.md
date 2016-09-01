@@ -20,9 +20,12 @@ mix phoenix.server
 ```
 
 to run the tests:
-
 ```bash
 mix test
+```
+to run the test continuously:
+```bash
+mix test.watch
 ```
 
 ### Ruby

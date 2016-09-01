@@ -28,11 +28,14 @@ defmodule Quizzy.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.4"},
-     {:gettext, "~> 0.9"},
-     {:timex, "~> 3.0"},
-     {:uuid, "~> 1.1"},
-     {:cowboy, "~> 1.0"},
-     {:credo, "~> 0.4", only: [:dev, :test]}]
+  [
+    {:phoenix, "~> 1.1.4"},
+    {:gettext, "~> 0.9"},
+    {:timex, "~> 3.0"},
+    {:uuid, "~> 1.1"},
+    {:cowboy, "~> 1.0"},
+    {:credo, "~> 0.4", only: [:dev, :test]},
+    {:mix_test_watch, "~> 0.2", only: [:dev, :test]}
+  ]
   end
 end
