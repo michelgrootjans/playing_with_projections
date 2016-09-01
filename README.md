@@ -28,38 +28,19 @@ to run the test continuously:
 mix test.watch
 ```
 
-### Ruby
+## Generator
 
-The server implementation is a sinatra app.
-
-To prepare the server:
+To prepare the generator:
 ```
-cd server/ruby
+cd generator
 bundle install
 ```
 
 To generate some data
 ```
-ruby server/ruby/generate.rb
+ruby generator/generate.rb
 ```
 
-To run the server:
-```
-ruby server/ruby/app.rb
-```
+## Clients
 
-## Ruby client
-To prepare the client:
-```
-cd client/ruby
-bundle install
-```
-
-To run the client
-```
-ruby clients/ruby/client.rb
-```
-or to read from a specific stream
-```
-ruby clients/ruby/client.rb stream1
-```
+Look in the client directories
