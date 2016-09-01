@@ -33,6 +33,6 @@ function registeredPlayersProjection(events) {
     }, {});
 }
 
-fetchStream(1)
+fetchStream(0)
     .then(events => console.log(registeredPlayersProjection(events)))
     .catch(error => console.log(error));
