@@ -1,7 +1,7 @@
 defmodule Quizzy.StreamView do
     use Quizzy.Web, :view
 
-    alias Quizzy.Events.{PlayerHasRegistered, QuizWasCreated, QuestionAddedToQuiz}
+    alias Quizzy.Events.{Meta}
 
     def render("show.json", %{stream: stream}) do
         render_one(stream, Quizzy.StreamView, "event.json")
@@ -12,15 +12,17 @@ defmodule Quizzy.StreamView do
         |> Enum.map &(render_event &1)
     end
 
-    def render_event(%PlayerHasRegistered{} = event) do
-        %{event: "PlayerHasRegistered", data: event}
+    def render_event(%{__struct__: struct, meta: meta} = event) do
+        %{type: struct_to_type(struct), id: meta.id, timestamp: meta.timestamp, payload: Map.delete(event, :meta)}
     end
 
-    def render_event(%QuizWasCreated{} = event) do
-        %{event: "QuizWasCreated", data: event}
+    defp render_event(type, %{meta: meta} = event) do
     end
 
-    def render_event(%QuestionAddedToQuiz{} = event) do
-        %{event: "QuestionAddedToQuiz", data: event}
+    defp struct_to_type(struct) do
+        "#{struct}"
+        |> String.split(".")
+        |> List.last
     end
+
 end
