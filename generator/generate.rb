@@ -6,7 +6,7 @@ require_relative 'history_generator.rb'
 
 
 stream_name = ARGV.first || 'stream1'
-file_name = "streams/#{stream_name}.json"
+file_name = "../data/#{stream_name}.json"
 
 puts "Generating #{file_name}"
 
