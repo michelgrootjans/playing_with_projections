@@ -29,6 +29,7 @@ defmodule Quizzy.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
   [
+    {:poison, "~> 2.0"},
     {:phoenix, "~> 1.1.4"},
     {:gettext, "~> 0.9"},
     {:timex, "~> 3.0"},
