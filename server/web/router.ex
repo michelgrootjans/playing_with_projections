@@ -5,7 +5,7 @@ defmodule Quizzy.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", Quizzy do
+  scope "/", Quizzy do
     pipe_through :api
 
     resources "/stream", StreamController, only: [:show]
