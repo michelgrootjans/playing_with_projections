@@ -10,11 +10,11 @@ module Statistics
       top_date = startup_date + 150
       puts top_date
       players = (1..2).map { Player.generate(Rubystats::NormalDistribution.new(top_date)) }
-      quizzes = (1..2).map{ Quiz.generate(Rubystats::NormalDistribution.new(top_date))}
+      quizzes = players.map(&:create_quizzes)
       [players, quizzes].flatten
           .map(&:events).flatten
           .select{|e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
-          .each{|e| e[:timestamp] = e[:timestamp].strftime("%DT%T.%L")}
+          .each{|e| e[:timestamp] = e[:timestamp].strftime("%FT%T.%L")}
           .sort_by { |e| e[:timestamp] }
     end
   end

@@ -21,6 +21,10 @@ module Statistics
           generate_event('PlayerHasRegistered', registered_at, @options.except(:registered_at ))
       ]
     end
+
+    def create_quizzes
+      (1..6).map{ Quiz.generate(self) }
+    end
   end
 
   class Quiz
@@ -31,12 +35,12 @@ module Statistics
       @options = options
     end
 
-    def self.generate date_generator
+    def self.generate author
       Quiz.new(
           quiz_id: SecureRandom.uuid,
           quiz_title: Faker::Lorem.sentence,
-          owner_id: SecureRandom.uuid,
-          created_at: date_generator.rng
+          owner_id: author.player_id,
+          created_at: author.registered_at + 1.0 * Random.new.rand(1000)/10
       )
     end
 
