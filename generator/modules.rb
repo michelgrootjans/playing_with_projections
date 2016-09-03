@@ -10,7 +10,7 @@ module Statistics
       {
           id: SecureRandom.uuid,
           type: type,
-          timestamp: timestamp.strftime('%FT%T.%L'),
+          timestamp: timestamp,
           payload: payload
       }
     end

@@ -82,7 +82,7 @@ defmodule Quizzy.Events do
             "QuizWasCreated" ->
                 %QuizWasCreated{
                     meta: meta(id, timestamp),
-                    quiz_id: payload.quiz_id,
+                      quiz_id: payload.quiz_id,
                     quiz_title: payload.quiz_title,
                     owner_id: payload.owner_id
                 }
