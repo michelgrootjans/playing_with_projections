@@ -46,7 +46,7 @@ bundle install
 
 To generate some data
 ```
-ruby generator/generate.rb
+ruby generate.rb
 ```
 
 ## Clients
