@@ -1,3 +1,5 @@
+require 'time'
+
 module Statistics
   module HashToFields
     def method_missing *args
@@ -10,7 +12,7 @@ module Statistics
       {
           id: SecureRandom.uuid,
           type: type,
-          timestamp: timestamp.strftime('%FT%T.%L'),
+          timestamp: timestamp.to_time.utc.iso8601,
           payload: payload
       }
     end
