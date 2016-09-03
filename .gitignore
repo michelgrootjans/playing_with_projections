@@ -1,3 +1,4 @@
 .idea
 elm-stuff
-data
+data/*.json
+!data/0.json
