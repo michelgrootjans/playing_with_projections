@@ -161,8 +161,8 @@ defmodule Quizzy.Events do
 
     defp meta(id, timestamp) do
         %Meta{
-            id: UUID.uuid4(),
-            timestamp: Timex.now
+            id: id,
+            timestamp: timestamp
         }
     end
 end
