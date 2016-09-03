@@ -72,6 +72,11 @@ defmodule Quizzy.Events do
     defstruct [:meta, :game_id]
   end
 
+  defmodule GameWasCancelled do
+    @enforce_keys [:meta, :game_id]
+    defstruct [:meta, :game_id]
+  end
+
     def json_to_event(%{type: type, id: id, timestamp: timestamp, payload: payload}) do
         case type do
             "QuizWasCreated" ->
@@ -153,6 +158,11 @@ defmodule Quizzy.Events do
                 }
             "GameWasFinished" ->
                 %GameWasFinished{
+                    meta: meta(id, timestamp),
+                    game_id: payload.game_id,
+                }
+            "GameWasCancelled" ->
+                %GameWasCancelled{
                     meta: meta(id, timestamp),
                     game_id: payload.game_id,
                 }
