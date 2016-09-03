@@ -1,47 +1,23 @@
 require 'faker'
 require 'rubystats'
+require 'time'
 require_relative 'modules'
+require_relative 'models'
+
 
 module Statistics
   class Generator
     def generate_history
-      registration_date_generator = Rubystats::NormalDistribution.new(DateTime.now, 100)
-      players = (1..10).map { Player.generate(registration_date_generator) }
-      [players].flatten
+      startup_date = DateTime.parse('2016-1-1T08:00:00')
+      top_date = startup_date + 150
+      puts top_date
+      players = (1..2).map { Player.generate(Rubystats::NormalDistribution.new(top_date)) }
+      quizzes = players.map(&:create_quizzes)
+      [players, quizzes].flatten
           .map(&:events).flatten
-          .select{|e| DateTime.parse(e[:timestamp]) < DateTime.now }
+          .select{|e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
+          .each{|e| e[:timestamp] = e[:timestamp].to_time.utc.iso8601}
           .sort_by { |e| e[:timestamp] }
-    end
-  end
-
-
-  class Player
-    def self.generate date_generator
-      Player.new(
-          id: SecureRandom.uuid,
-          first_name: Faker::Name.first_name,
-          last_name: Faker::Name.last_name,
-          registered_at: date_generator.rng
-      )
-    end
-
-    include HashToFields
-    include EventGenerator
-
-    def initialize(options)
-      @options = options
-    end
-
-    def events
-      [
-          generate_event(
-              'PlayerHasRegistered',
-              registered_at,
-              player_id: id,
-              first_name: first_name,
-              last_name: last_name
-          )
-      ]
     end
   end
 end
