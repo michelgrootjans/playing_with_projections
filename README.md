@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/michelgrootjans/playing_with_projections.svg?label=ready&title=Ready)](http://waffle.io/michelgrootjans/playing_with_projections)
+
 # Playing with Projections
 Preparation of a workshop
 
