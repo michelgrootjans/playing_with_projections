@@ -15,9 +15,10 @@ module Statistics
       quizzes = players.map(&:create_quizzes)
       [players, quizzes].flatten
           .map(&:events).flatten
-          .each{|e| e[:timestamp] = e[:timestamp].to_time.utc.iso8601}
           .select{|e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
           .sort_by { |e| e[:timestamp] }
+          .each{|e| e[:timestamp] = e[:timestamp].to_time.utc.iso8601}
     end
   end
 end
+it st
