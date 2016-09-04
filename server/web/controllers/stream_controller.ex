@@ -31,9 +31,15 @@ defmodule Quizzy.StreamController do
     defp parse_json_file(file) do
         {:ok, file} = File.read file
 
+        sort_events = fn(event1, event2) ->
+            t1 = Timex.parse!(event1.meta.timestamp, "{ISO:Extended}")
+            t2 = Timex.parse!(event2.meta.timestamp, "{ISO:Extended}")
+            Timex.compare(t1, t2) < 1
+        end
+
         file
         |> Poison.Parser.parse!(keys: :atoms!)
         |> Enum.map(&(Events.json_to_event(&1)))
+        |> Enum.sort(&(sort_events.(&1, &2)))
     end
-
 end

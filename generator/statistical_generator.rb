@@ -1,7 +1,9 @@
 require 'faker'
 require 'rubystats'
+require 'time'
 require_relative 'modules'
 require_relative 'models'
+
 
 module Statistics
   class Generator
@@ -13,8 +15,8 @@ module Statistics
       quizzes = players.map(&:create_quizzes)
       [players, quizzes].flatten
           .map(&:events).flatten
-          .select { |e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
-          .each{|e| e[:timestamp] = e[:timestamp].strftime("%FT%T.%L")}
+          .each{|e| e[:timestamp] = e[:timestamp].to_time.utc.iso8601}
+          .select{|e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
           .sort_by { |e| e[:timestamp] }
     end
   end
