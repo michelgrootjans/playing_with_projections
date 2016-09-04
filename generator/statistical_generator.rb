@@ -13,7 +13,7 @@ module Statistics
       quizzes = players.map(&:create_quizzes)
       [players, quizzes].flatten
           .map(&:events).flatten
-          .select{|e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
+          .select { |e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
           .each{|e| e[:timestamp] = e[:timestamp].strftime("%FT%T.%L")}
           .sort_by { |e| e[:timestamp] }
     end

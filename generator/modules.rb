@@ -15,4 +15,10 @@ module Statistics
       }
     end
   end
+
+  module TimeHelpers
+    def a_few_minutes
+      (1.0 + Random.new.rand(5.0)) /(24*60)
+    end
+  end
 end
