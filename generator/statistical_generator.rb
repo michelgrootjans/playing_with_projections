@@ -21,4 +21,3 @@ module Statistics
     end
   end
 end
-it st
