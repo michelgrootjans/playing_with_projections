@@ -134,7 +134,10 @@ module Statistics
     end
 
     def generate_question_flow(question, players)
-      generate_event('QuestionWasOpened', DateTime.now, {game_id: game_id, question_id: question.question_id})
+      [
+          generate_event('QuestionWasOpened', DateTime.now, {game_id: game_id, question_id: question.question_id}),
+          generate_event('QuestionWasClosed', DateTime.now, {game_id: game_id, question_id: question.question_id})
+      ]
     end
   end
 end
