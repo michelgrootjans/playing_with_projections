@@ -94,4 +94,30 @@ module Statistics
       ]
     end
   end
+
+  class Game
+    def self.generate(quiz, players)
+      Game.new(
+          quiz,
+          players,
+          game_id: SecureRandom.uuid,
+          quiz_id: quiz.quiz_id
+      )
+    end
+
+    include HashToFields
+    include EventGenerator
+    include TimeHelpers
+    extend TimeHelpers
+
+    def initialize(quiz, players, options)
+      @options = options
+    end
+
+    def events
+      [
+          generate_event('GameWasOpened', DateTime.now, @options)
+      ]
+    end
+  end
 end
