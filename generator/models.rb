@@ -123,22 +123,26 @@ module Statistics
           generate_event('GameWasOpened', DateTime.now, @options),
           generate_event('GameWasStarted', DateTime.now, {game_id: game_id}),
           generate_event('GameWasFinished', DateTime.now, {game_id: game_id})
-      ] + players_joined(@players) + questions_flow(@quiz, @players)
+      ] + @players.map{|player| player_joined(player)} + @quiz.questions.map { |question| generate_question_flow(question, @players) }
     end
 
-    def players_joined(players)
-      players.map{|p| generate_event('PlayerJoinedGame', DateTime.now, {player_id: p.player_id, game_id: game_id})}
+    def player_joined(player)
+      generate_event('PlayerJoinedGame', DateTime.now, {player_id: player.player_id, game_id: game_id})
     end
 
-    def questions_flow(quiz, players)
-      quiz.questions.map{|q| generate_question_flow(q, players) }
-    end
 
     def generate_question_flow(question, players)
       [
           generate_event('QuestionWasOpened', DateTime.now, {game_id: game_id, question_id: question.question_id}),
           generate_event('QuestionWasClosed', DateTime.now, {game_id: game_id, question_id: question.question_id})
+      ] + players.map{|player| answer_question(question, player)}
+    end
+
+    def answer_question(question, player)
+      [
+          generate_event('AnswerWasGiven', DateTime.now, {game_id: game_id, question_id: question.question_id, answer: Faker::Lorem.word})
       ]
     end
   end
+
 end
