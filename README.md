@@ -36,6 +36,12 @@ mix test.watch
 
 `/stream/0` is used to test the clients
 
+### Heroku
+
+url: https://radiant-springs-77061.herokuapp.com/
+installation followed: http://www.phoenixframework.org/docs/heroku
+
+
 ## Generator
 
 To prepare the generator:
