@@ -125,7 +125,7 @@ decodeQuestionAddedToQuiz =
 
 fetchEvents : String -> Cmd Msg
 fetchEvents stream =
-    Http.get decodeEvents ("http://localhost:4000/stream/" ++ stream)
+    Http.get decodeEvents ("https://playing-with-projections.herokuapp.com/stream/" ++ stream)
         |> Task.mapError toString
         |> Task.perform ErrorOccurred EventsFetched
 
