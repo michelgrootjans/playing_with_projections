@@ -111,13 +111,19 @@ module Statistics
     extend TimeHelpers
 
     def initialize(quiz, players, options)
+      @quiz = quiz
+      @players = players
       @options = options
     end
 
     def events
       [
           generate_event('GameWasOpened', DateTime.now, @options)
-      ]
+      ] + players_joined
+    end
+
+    def players_joined
+      @players.map{|p| generate_event('PlayerJoinedGame', DateTime.now, {player_id: p.player_id, game_id: game_id})}
     end
   end
 end
