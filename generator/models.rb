@@ -123,7 +123,7 @@ module Statistics
     def events
       [
           generate_event('GameWasOpened', opened_at, @options.except(:opened_at)),
-          generate_event('GameWasStarted', DateTime.now, {game_id: game_id}),
+          generate_event('GameWasStarted', @attendances.map(&:joined_at).max + a_few_seconds, {game_id: game_id}),
           generate_event('GameWasFinished', DateTime.now, {game_id: game_id})
       ] + @attendances.map(&:events) + @quiz.questions.map { |question| generate_question_flow(question, @players) }
     end
