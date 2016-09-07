@@ -3,10 +3,10 @@ defmodule QuizzyClient do
     alias QuizzyClient.Projections.Players
 
     def main do
-        %{body: body} = HTTPotion.get "http://localhost:4000/stream/0"
+        %{body: body} = HTTPotion.get "https://playing-with-projections.herokuapp.com/stream/0"
 
         events = body
-        |> Poison.Parser.parse!(keys: :atoms!)
+        |> Poison.Parser.parse!(keys: :atoms)
         |> Enum.map(&(parse(&1)))
 
         players = Enum.reduce(events, Players.new, fn event, state -> Players.project(state, event) end)
