@@ -34,7 +34,7 @@ public class DddWorkshopApplication {
         return args -> {
 
             ResponseEntity<List<be.tothepoint.Response>> response =
-                    restTemplate.exchange(RequestEntity.get(URI.create("http://localhost:4000/stream/1")).build(),
+                    restTemplate.exchange(RequestEntity.get(URI.create("https://playing-with-projections.herokuapp.com/stream/1")).build(),
                             new ParameterizedTypeReference<List<be.tothepoint.Response>>() {
                             });
 
