@@ -118,7 +118,8 @@ module Statistics
 
     def events
       [
-          generate_event('GameWasOpened', DateTime.now, @options)
+          generate_event('GameWasOpened', DateTime.now, @options),
+          generate_event('GameWasStarted', DateTime.now, {game_id: game_id})
       ] + players_joined
     end
 
