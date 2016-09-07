@@ -16,7 +16,7 @@ module Statistics
       games = generate_games(players, quizzes)
       [players, quizzes, games].flatten
           .map(&:events).flatten
-          .select{|e| e[:timestamp] > startup_date && e[:timestamp] < DateTime.now }
+          .select{|e| e[:timestamp] < DateTime.now }
           .sort_by { |e| e[:timestamp] }
           .each{|e| e[:timestamp] = e[:timestamp].to_time.utc.iso8601}
     end

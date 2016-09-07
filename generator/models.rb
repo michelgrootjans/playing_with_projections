@@ -103,7 +103,8 @@ module Statistics
           quiz,
           players,
           game_id: SecureRandom.uuid,
-          quiz_id: quiz.quiz_id
+          quiz_id: quiz.quiz_id,
+          opened_at: [players.map(&:registered_at), quiz.created_at].flatten.max + a_few_days
       )
     end
 
@@ -116,20 +117,16 @@ module Statistics
       @quiz = quiz
       @players = players
       @options = options
+      @attendances = @players.map{|player| Attendance.new(self, player)}
     end
 
     def events
       [
-          generate_event('GameWasOpened', DateTime.now, @options),
+          generate_event('GameWasOpened', opened_at, @options.except(:opened_at)),
           generate_event('GameWasStarted', DateTime.now, {game_id: game_id}),
           generate_event('GameWasFinished', DateTime.now, {game_id: game_id})
-      ] + @players.map{|player| player_joined(player)} + @quiz.questions.map { |question| generate_question_flow(question, @players) }
+      ] + @attendances.map(&:events) + @quiz.questions.map { |question| generate_question_flow(question, @players) }
     end
-
-    def player_joined(player)
-      generate_event('PlayerJoinedGame', DateTime.now, {player_id: player.player_id, game_id: game_id})
-    end
-
 
     def generate_question_flow(question, players)
       [
@@ -144,6 +141,24 @@ module Statistics
       else
         generate_event('AnswerWasGiven', DateTime.now, {game_id: game_id, question_id: question.question_id, player_id: player.player_id, answer: Faker::Lorem.word})
       end
+    end
+  end
+
+  class Attendance
+    include HashToFields
+    include TimeHelpers
+    include EventGenerator
+
+    def initialize(game, player)
+      @options = {
+          joined_at: game.opened_at + a_few_seconds,
+          player_id: player.player_id,
+          game_id: game.game_id
+      }
+    end
+
+    def events
+      generate_event('PlayerJoinedGame', joined_at, @options.except(:joined_at))
     end
   end
 
