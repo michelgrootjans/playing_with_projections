@@ -103,7 +103,8 @@ module Statistics
           quiz,
           players,
           game_id: SecureRandom.uuid,
-          quiz_id: quiz.quiz_id
+          quiz_id: quiz.quiz_id,
+          opened_at: [players.map(&:registered_at), quiz.created_at].flatten.max + a_few_days
       )
     end
 
@@ -116,25 +117,49 @@ module Statistics
       @quiz = quiz
       @players = players
       @options = options
+      @attendances = @players.map{|player| Attendance.new(self, player)}
     end
 
     def events
       [
-          generate_event('GameWasOpened', DateTime.now, @options),
-          generate_event('GameWasStarted', DateTime.now, {game_id: game_id})
-      ] + players_joined(@players) + questions_flow(@quiz, @players)
-    end
-
-    def players_joined(players)
-      players.map{|p| generate_event('PlayerJoinedGame', DateTime.now, {player_id: p.player_id, game_id: game_id})}
-    end
-
-    def questions_flow(quiz, players)
-      quiz.questions.map{|q| generate_question_flow(q, players) }
+          generate_event('GameWasOpened', opened_at, @options.except(:opened_at)),
+          generate_event('GameWasStarted', @attendances.map(&:joined_at).max + a_few_seconds, {game_id: game_id}),
+          generate_event('GameWasFinished', DateTime.now, {game_id: game_id})
+      ] + @attendances.map(&:events) + @quiz.questions.map { |question| generate_question_flow(question, @players) }
     end
 
     def generate_question_flow(question, players)
-      generate_event('QuestionWasOpened', DateTime.now, {game_id: game_id, question_id: question.question_id})
+      [
+          generate_event('QuestionWasOpened', DateTime.now, {game_id: game_id, question_id: question.question_id}),
+          generate_event('QuestionWasClosed', DateTime.now, {game_id: game_id, question_id: question.question_id})
+      ] + players.map{|player| answer_question(question, player)}
+    end
+
+    def answer_question(question, player)
+      if (1..4).to_a.sample == 1
+        generate_event('AnswerWasGiven', DateTime.now, {game_id: game_id, question_id: question.question_id, player_id: player.player_id, answer: question.answer})
+      else
+        generate_event('AnswerWasGiven', DateTime.now, {game_id: game_id, question_id: question.question_id, player_id: player.player_id, answer: Faker::Lorem.word})
+      end
     end
   end
+
+  class Attendance
+    include HashToFields
+    include TimeHelpers
+    include EventGenerator
+
+    def initialize(game, player)
+      @options = {
+          joined_at: game.opened_at + a_few_seconds,
+          player_id: player.player_id,
+          game_id: game.game_id
+      }
+    end
+
+    def events
+      generate_event('PlayerJoinedGame', joined_at, @options.except(:joined_at))
+    end
+  end
+
 end

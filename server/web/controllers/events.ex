@@ -53,8 +53,8 @@ defmodule Quizzy.Events do
   end
 
   defmodule AnswerWasGiven do
-    @enforce_keys [:meta, :game_id, :question_id, :answer, :answer_time]
-    defstruct [:meta, :game_id, :question_id, :answer, :answer_time]
+    @enforce_keys [:meta, :game_id, :question_id, :answer]
+    defstruct [:meta, :game_id, :question_id, :answer]
   end
 
   defmodule QuestionTimedOut do
@@ -141,8 +141,7 @@ defmodule Quizzy.Events do
                     meta: meta(id, timestamp),
                     game_id: payload.game_id,
                     question_id: payload.question_id,
-                    answer: payload.answer,
-                    answer_time: payload.answer_time
+                    answer: payload.answer
                 }
             "QuestionTimedOut" ->
                 %QuestionTimedOut{
