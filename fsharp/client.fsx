@@ -4,9 +4,6 @@ open System
 open FSharp.Data
 open FSharp.Data.JsonExtensions
 
-let streamId = 0 
-let result = Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId)
-
 type Event<'T> = {
     Id: string
     Timestamp: DateTime
@@ -32,13 +29,10 @@ let parseEvent (event:JsonValue) =
         Payload = parsePayload event?payload (event.["type"].AsString())
     }
 
-let parse events =
-    events
-    |> Seq.map parseEvent
-
-let json = JsonValue.Parse result
-let events =
+let fetchEvents streamId = 
+    let json = Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId) |> JsonValue.Parse
     match json with
-    | JsonValue.Array events -> parse events
+    | JsonValue.Array events -> events |> Seq.map parseEvent
     | _ -> failwith "Unrecognized stream"
-printfn "%A" events
+
+fetchEvents 0 |> printfn "%A"
