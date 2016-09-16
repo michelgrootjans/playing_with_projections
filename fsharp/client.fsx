@@ -20,6 +20,12 @@ and PlayerHasRegistered = {
 }
 
 let parsePayload (payload:JsonValue) = function
+    | "PlayerHasRegistered" -> 
+        PlayerHasRegistered { 
+            PlayerId = payload.["player_id"].AsInteger()
+            LastName = payload.["last_name"].AsString()
+            FirstName = payload.["first_name"].AsString()
+        }
     | _ -> UnknownEvent
 
 let parseEvent (event:JsonValue) =
