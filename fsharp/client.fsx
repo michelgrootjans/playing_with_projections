@@ -2,6 +2,7 @@
 
 open System
 open FSharp.Data
+open FSharp.Data.JsonExtensions
 
 let streamId = 0 
 let result = Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId)
@@ -26,9 +27,9 @@ let parsePayload (payload:JsonValue) = function
 
 let parseEvent (event:JsonValue) =
     { 
-        Id = event.GetProperty("id").AsString()
-        Timestamp = event.GetProperty("timestamp").AsDateTime()
-        Payload = parsePayload (event.GetProperty("payload")) (event.GetProperty("payload")) 
+        Id = event?id.AsString()
+        Timestamp = event?timestamp.AsDateTime()
+        Payload = parsePayload event?payload (event.["type"].AsString())
     }
 
 let parse events =
