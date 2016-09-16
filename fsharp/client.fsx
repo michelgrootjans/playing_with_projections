@@ -10,22 +10,15 @@ type Event<'T> = {
     Payload: 'T
 }
 
+type PlayerHasRegistered = JsonProvider<"""{"player_id":1,"last_name":"Coopman","first_name":"Thomas"}""">
+
 type Events = 
-    | PlayerHasRegistered of PlayerHasRegistered
+    | PlayerHasRegistered of PlayerHasRegistered.Root
     | UnknownEvent
-and PlayerHasRegistered = {
-    PlayerId: int
-    LastName: string
-    FirstName: string
-}
 
 let parsePayload (payload:JsonValue) = function
     | "PlayerHasRegistered" -> 
-        PlayerHasRegistered { 
-            PlayerId = payload.["player_id"].AsInteger()
-            LastName = payload.["last_name"].AsString()
-            FirstName = payload.["first_name"].AsString()
-        }
+        PlayerHasRegistered (PlayerHasRegistered.Parse(payload.ToString()))
     | _ -> UnknownEvent
 
 let parseEvent (event:JsonValue) =
