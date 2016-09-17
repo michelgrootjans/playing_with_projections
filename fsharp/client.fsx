@@ -20,13 +20,14 @@ type Events =
     | QuizWasCreated of QuizWasCreated.Root
     | QuestionAddedToQuiz of QuestionAddedToQuiz.Root
     | QuizWasPublished of QuizWasPublished.Root
+    | IgnoredEvent of string
 
 let parsePayload payload = function
     | "PlayerHasRegistered" -> PlayerHasRegistered (PlayerHasRegistered.Parse(payload))
     | "QuizWasCreated" -> QuizWasCreated (QuizWasCreated.Parse(payload))
     | "QuestionAddedToQuiz" -> QuestionAddedToQuiz (QuestionAddedToQuiz.Parse(payload))
     | "QuizWasPublished" -> QuizWasPublished (QuizWasPublished.Parse(payload))
-    | e -> failwithf "Unknown event %s" e
+    | e -> IgnoredEvent e
 
 let parseEvent (event:JsonValue) =
     { 
