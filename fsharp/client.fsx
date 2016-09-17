@@ -35,10 +35,14 @@ let parseEvent (event:JsonValue) =
         Payload = parsePayload (event?payload.ToString()) (event.["type"].AsString())
     }
 
-let fetchEvents streamId = 
-    let json = Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId) |> JsonValue.Parse
+let parseEvents json = 
     match json with
     | JsonValue.Array events -> events |> Seq.map parseEvent
     | _ -> failwith "Unrecognized stream"
 
-fetchEvents 0 |> printfn "%A"
+let fetchStream streamId =
+    Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId) 
+    |> JsonValue.Parse
+
+let stream0 = fetchStream 0
+parseEvents stream0 |> printfn "%A"
