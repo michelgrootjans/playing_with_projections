@@ -45,5 +45,9 @@ let fetchStream streamId =
     Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId) 
     |> JsonValue.Parse
 
-let stream0 = fetchStream 0
-parseEvents stream0 |> printfn "%A"
+let readStreamFromFile streamId = 
+    System.IO.File.ReadAllText(__SOURCE_DIRECTORY__ + (sprintf "/%d.json" streamId))
+    |> JsonValue.Parse
+
+let stream0 = fetchStream 0 |> parseEvents
+stream0 |> printfn "%A"
