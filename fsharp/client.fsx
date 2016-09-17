@@ -49,5 +49,9 @@ let readStreamFromFile streamId =
     System.IO.File.ReadAllText(__SOURCE_DIRECTORY__ + (sprintf "/%d.json" streamId))
     |> JsonValue.Parse
 
+// /!\ WARNING /!\ we disabled intermediate variables display to avoid too long display time in F# interative (make crash VSCode!!)
+// You can still display a variable by sending just its name to F# Interactive (becareful with VSCode!!)
+fsi.ShowDeclarationValues <- false
+
 let stream0 = fetchStream 0 |> parseEvents
 stream0 |> printfn "%A"
