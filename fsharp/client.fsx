@@ -53,5 +53,15 @@ let readStreamFromFile streamId =
 // You can still display a variable by sending just its name to F# Interactive (becareful with VSCode!!)
 fsi.ShowDeclarationValues <- false
 
+(* HERE YOU START 
+1- You can use the two following functions to load stream in memory
+   - fetchStream to fetch it directly from the Web
+   - readStream to read from JSON file on disk (in case on wifi loss...) 
+2- Pipe to parseEvents to get a stream of typed events.
+3- You can add any event really easily with 2 lines:
+   - add a type with a JsonProvider where you give an example of JSON (taken from the stream) => it builds a parser type
+   - add an union case for this event in Events type using [JsonProvider type].Root type *)
+
+// SAMPLE: parse of stream 0
 let stream0 = fetchStream 0 |> parseEvents
 stream0 |> printfn "%A"
