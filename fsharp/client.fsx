@@ -20,13 +20,14 @@ type Events =
     | QuizWasCreated of QuizWasCreated.Root
     | QuestionAddedToQuiz of QuestionAddedToQuiz.Root
     | QuizWasPublished of QuizWasPublished.Root
+    | IgnoredEvent of string
 
 let parsePayload payload = function
     | "PlayerHasRegistered" -> PlayerHasRegistered (PlayerHasRegistered.Parse(payload))
     | "QuizWasCreated" -> QuizWasCreated (QuizWasCreated.Parse(payload))
     | "QuestionAddedToQuiz" -> QuestionAddedToQuiz (QuestionAddedToQuiz.Parse(payload))
     | "QuizWasPublished" -> QuizWasPublished (QuizWasPublished.Parse(payload))
-    | e -> failwithf "Unknown event %s" e
+    | e -> IgnoredEvent e
 
 let parseEvent (event:JsonValue) =
     { 
@@ -35,10 +36,32 @@ let parseEvent (event:JsonValue) =
         Payload = parsePayload (event?payload.ToString()) (event.["type"].AsString())
     }
 
-let fetchEvents streamId = 
-    let json = Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId) |> JsonValue.Parse
+let parseEvents json = 
     match json with
     | JsonValue.Array events -> events |> Seq.map parseEvent
     | _ -> failwith "Unrecognized stream"
 
-fetchEvents 0 |> printfn "%A"
+let fetchStream streamId =
+    Http.RequestString (sprintf "https://playing-with-projections.herokuapp.com/stream/%i" streamId) 
+    |> JsonValue.Parse
+
+let readStreamFromFile streamId = 
+    System.IO.File.ReadAllText(__SOURCE_DIRECTORY__ + (sprintf "/%d.json" streamId))
+    |> JsonValue.Parse
+
+// /!\ WARNING /!\ we disabled intermediate variables display to avoid too long display time in F# interative (make crash VSCode!!)
+// You can still display a variable by sending just its name to F# Interactive (becareful with VSCode!!)
+fsi.ShowDeclarationValues <- false
+
+(* HERE YOU START 
+1- You can use the two following functions to load stream in memory
+   - fetchStream to fetch it directly from the Web
+   - readStream to read from JSON file on disk (in case on wifi loss...) 
+2- Pipe to parseEvents to get a stream of typed events.
+3- You can add any event really easily with 2 lines:
+   - add a type with a JsonProvider where you give an example of JSON (taken from the stream) => it builds a parser type
+   - add an union case for this event in Events type using [JsonProvider type].Root type *)
+
+// SAMPLE: parse of stream 0
+let stream0 = fetchStream 0 |> parseEvents
+stream0 |> printfn "%A"
