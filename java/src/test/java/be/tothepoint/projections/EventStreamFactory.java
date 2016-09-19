@@ -15,6 +15,7 @@ public class EventStreamFactory {
     public static List<Event> buildSingleQuestionEventSream() {
         final List<Event> events = new ArrayList<>();
         int eventId = 1;
+        events.add(buildPlayerHasRegistered(eventId++));
         events.add(buildGameWasOpened(eventId++));
         events.add(buildPlayerJoinedTeamEvent(eventId++));
         events.add(buildGameStarted(eventId++));
@@ -28,6 +29,9 @@ public class EventStreamFactory {
     public static List<Event> buildBasicQuizEventSream() {
         final List<Event> events = new ArrayList<>();
         int eventId = 1;
+        events.add(buildPlayerHasRegistered(eventId++));
+        events.add(buildPlayerHasRegistered(eventId++));
+        events.add(buildPlayerHasRegistered(eventId++));
         events.add(buildPlayerJoinedTeamEvent(eventId++));
         events.add(buildPlayerJoinedTeamEvent(eventId++));
         events.add(buildPlayerJoinedTeamEvent(eventId++));
@@ -50,6 +54,14 @@ public class EventStreamFactory {
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
                 .withType(EventTypes.PLAYER_JOINED_GAME)
+                .build();
+    }
+
+    private static Event buildPlayerHasRegistered(int id) {
+        return EventBuilder.newBuilder()
+                .withId("Event_" + id)
+                .withTimestamp(LocalDateTime.now())
+                .withType(EventTypes.PLAYER_HAS_REGISTERED)
                 .build();
     }
 

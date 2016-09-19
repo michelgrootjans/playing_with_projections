@@ -28,6 +28,16 @@ repositories {
     mavenCentral()
 }
 
+test {
+    exclude "**/*IntegTest.class"
+}
+
+task integrationTest(type: Test) {
+
+}
+
+check.dependsOn integrationTest
+
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')

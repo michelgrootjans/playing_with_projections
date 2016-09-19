@@ -12,7 +12,7 @@ class NrOfPlayersProjection implements Projection<Long> {
     public Long project(List<Event> events) {
         return events
                 .stream()
-                .filter(x -> x.getType().equals("PlayerHasRegistered"))
+                .filter(x -> x.getType().equals(EventTypes.PLAYER_HAS_REGISTERED))
                 .count();
     }
 

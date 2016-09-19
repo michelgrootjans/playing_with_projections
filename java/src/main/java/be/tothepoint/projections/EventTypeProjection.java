@@ -18,7 +18,7 @@ class EventTypeProjection implements Projection<List<String>> {
 
     @Override
     public String buildResultMessage(List<String> eventTypes) {
-        return "The even stream : " + eventTypes.stream().collect(Collectors.joining(", "));
+        return "The even stream contained " + eventTypes.size() + " events.";
     }
 }
 
