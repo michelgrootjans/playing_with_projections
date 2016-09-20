@@ -1,4 +1,7 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace projections
 {
@@ -8,8 +11,16 @@ namespace projections
         {
             var client = new RestClient();
 
-            Console.WriteLine(client.Get("http://playing-with-projections.herokuapp.com/stream/0").Result);
-
+            var projector = new Projector(client.Get("http://playing-with-projections.herokuapp.com/stream/0").Result.ToObject<List<JObject>>());
         }
+    }
+
+    public class Projector
+    {
+      public Projector(List<JObject> events)
+      {
+        var numberOfEvents = events.Count();
+        Console.WriteLine("Number of events: {0}", numberOfEvents);
+      }
     }
 }
