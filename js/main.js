@@ -1,15 +1,15 @@
-const https = require("https");
+var https = require("https");
 
 function fetchStream(stream) {
-    const options = {
+    var options = {
         hostname: 'playing-with-projections.herokuapp.com',
         path: `/stream/${stream}`,
         method: 'GET'
     };
 
     return new Promise((resolve, reject) => {
-        let data = '';
-        const req = https.request(options, (res) => {
+        var data = '';
+        var req = https.request(options, (res) => {
             res.setEncoding('utf8');
             res.on('data', (chunk) => data += chunk);
             res.on('end', () => resolve(JSON.parse(data)))
@@ -21,8 +21,9 @@ function fetchStream(stream) {
 }
 
 function registeredPlayersProjection(events) {
-    return events.reduce((acc, {type, payload}) => {
-        switch (type) {
+    return events.reduce((acc, event) => {
+        var payload = event.payload;
+        switch (event.type) {
             case 'PlayerHasRegistered': {
                 acc[payload.player_id] = {first_name: payload.first_name, last_name: payload.last_name}
                 return acc;
