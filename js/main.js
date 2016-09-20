@@ -1,6 +1,7 @@
 var https = require("https");
+var fs = require('fs');
 
-function fetchStream(stream) {
+function fetchFromUrl(stream) {
     var options = {
         hostname: 'playing-with-projections.herokuapp.com',
         path: `/stream/${stream}`,
@@ -20,6 +21,18 @@ function fetchStream(stream) {
     });
 }
 
+function fetchFromFile(stream) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(`../data/${stream}.json`, 'utf-8', (err, data) => {
+      if(err) reject(err);
+
+      resolve(JSON.parse(data));
+    })
+  });
+}
+
+// Write your projection here
+
 function registeredPlayersProjection(events) {
     return events.reduce((acc, event) => {
         var payload = event.payload;
@@ -33,6 +46,8 @@ function registeredPlayersProjection(events) {
     }, {});
 }
 
-fetchStream(0)
+// Chose fetchFromUrl or fetchFromFile
+
+fetchFromFile(2)
     .then(events => console.log(registeredPlayersProjection(events)))
     .catch(error => console.log(error));
