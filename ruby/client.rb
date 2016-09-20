@@ -20,4 +20,4 @@ json_data = read_from_uri(stream_id)
 #json_data = read_from_file(stream_id)
 
 hashed_response = JSON.parse(json_data)
-puts hashed_response.inspect
+puts "Number of events: #{hashed_response.count}"
