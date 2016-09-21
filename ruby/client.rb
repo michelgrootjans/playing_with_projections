@@ -3,7 +3,7 @@ require 'rest-client'
 
 def read_from_uri stream_id
   # stream = "https://playing-with-projections.herokuapp.com/stream/#{stream_id}"
- stream = "https://raw.githubusercontent.com/tcoopman/playing_with_projections_server/master/data/#{stream_id}.json"
+  stream = "https://raw.githubusercontent.com/tcoopman/playing_with_projections_server/master/data/#{stream_id}.json"
   puts "Reading from '#{stream}'"
   RestClient.get stream
 end
