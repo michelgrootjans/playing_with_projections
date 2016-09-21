@@ -32,39 +32,4 @@ namespace projections
       }
       public int NumberOfEvents{get{ return events.Count();}}
     }
-
-    public class Event
-    {
-      public string id {get; set;}
-      public string type {get; set;}
-      public DateTime timestamp {get; set;}
-      public Dictionary<string, string> payload{get;set;}
-    }
-
-    public class JsonEventParser
-    {
-      public IEnumerable<Event> Parse(string data)
-      {
-          return JsonConvert.DeserializeObject<IEnumerable<Event>>(data);
-      }
-    }
-
-    public class FileEventReader
-    {
-      public string Read(string filePath)
-      {
-          Console.WriteLine($"Reading '{filePath}'");
-          return System.IO.File.ReadAllText(filePath);
-      }
-    }
-
-    public class RestEventReader
-    {
-      public string Read(string uri)
-      {
-        Console.WriteLine($"Reading '{uri}'");
-        return new RestClient().Get(uri).Result.ToString();
-      }
-    }
-
 }
