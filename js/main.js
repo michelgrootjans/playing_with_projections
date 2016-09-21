@@ -31,6 +31,14 @@ function fetchFromFile(stream) {
   });
 }
 
+// Transform the events (timestamp from string to Date)
+function transformTimestampToDate(events) {
+  return events.map(event => { 
+    event.timestamp = new Date(event.timestamp);
+    return event;
+  });
+}
+
 // Write your projection here
 
 function registeredPlayersProjection(events) {
@@ -48,6 +56,10 @@ function registeredPlayersProjection(events) {
 
 // Chose fetchFromUrl or fetchFromFile
 
-fetchFromFile(2)
+fetchFromFile(0)
+    // If you want to have the timestamps of the event as a Date object rather than a string, enable this
+    // transformation. This transformation mutates the events. After the transformation, the timestamp is a Date
+    // Also see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date for more info.
+    // .then(events => transformTimestampToDate(events)) 
     .then(events => console.log(registeredPlayersProjection(events)))
     .catch(error => console.log(error));
