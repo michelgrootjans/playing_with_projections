@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("playing_with_projections")]
+[assembly: AssemblyTitle("PlayingWithProjections")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("playing_with_projections")]
+[assembly: AssemblyProduct("PlayingWithProjections")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f2031b18-eec9-45bf-9d5e-45bcaa88c0ef")]
+[assembly: Guid("3ff72668-9f8f-4f8c-a37b-33c408d4820e")]
 
 // Version information for an assembly consists of the following four values:
 //
