@@ -1,7 +1,7 @@
 package be.tothepoint.infra;
 
 import be.tothepoint.Event;
-import be.tothepoint.ResponseProvider;
+import be.tothepoint.EventStreamProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
@@ -12,12 +12,12 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.util.List;
 
-class RestResponseProvider implements ResponseProvider {
-    private static final Logger LOGGER = LoggerFactory.getLogger(RestResponseProvider.class);
+class RestEventStreamProvider implements EventStreamProvider {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RestEventStreamProvider.class);
     private static final String URL = "https://playing-with-projections.herokuapp.com/stream/";
     private final RestTemplate restTemplate;
 
-    public RestResponseProvider(RestTemplate restTemplate) {
+    public RestEventStreamProvider(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 

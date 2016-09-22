@@ -11,18 +11,18 @@ import java.util.List;
 @Component
 class ProjectionsCommandLineRunner implements CommandLineRunner {
     private static final Logger log = LoggerFactory.getLogger(ProjectionsCommandLineRunner.class);
-    private final ResponseProvider responseProvider;
+    private final EventStreamProvider eventStreamProvider;
     private final List<Projection> projections;
 
-    public ProjectionsCommandLineRunner(ResponseProvider responseProvider, List<Projection> projections) {
-        this.responseProvider = responseProvider;
+    public ProjectionsCommandLineRunner(EventStreamProvider eventStreamProvider, List<Projection> projections) {
+        this.eventStreamProvider = eventStreamProvider;
         this.projections = projections;
     }
 
     @Override
     public void run(String... args) throws Exception {
         final String stream = getStreamId(args);
-        final List<Event> events = responseProvider.loadResponses(stream);
+        final List<Event> events = eventStreamProvider.loadResponses(stream);
         projections.forEach(x -> projectEventStream(events, x));
     }
 

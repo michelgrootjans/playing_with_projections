@@ -1,7 +1,7 @@
 package be.tothepoint.infra;
 
 import be.tothepoint.Event;
-import be.tothepoint.ResponseProvider;
+import be.tothepoint.EventStreamProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,12 +14,12 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-class JsonFileResponseProvider implements ResponseProvider {
-    private static final Logger LOGGER = LoggerFactory.getLogger(JsonFileResponseProvider.class);
+class JsonFileEventStreamProvider implements EventStreamProvider {
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonFileEventStreamProvider.class);
     private final ObjectMapper mapper;
     private final ResourceLoader resourceLoader;
 
-    public JsonFileResponseProvider(ObjectMapper mapper) {
+    public JsonFileEventStreamProvider(ObjectMapper mapper) {
         this.mapper = mapper;
         this.resourceLoader = new FileSystemResourceLoader();
     }
