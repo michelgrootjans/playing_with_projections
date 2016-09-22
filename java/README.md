@@ -13,8 +13,9 @@ The b.t.ProjectionsCommandLineRunner will print out the projections result messa
 
 
 By default the eventstream is retrieved from the server. In case of network problems run the application with the spring profile fs.
-Add -Dspring.profiles.active=fs to your VM Options
+To your VM Options add 
+>-Dspring.profiles.active=fs 
 
 There are different streams of events. If no stream is specified the system will default to zero. 
 The stream id is taken as the first argument pass to the application.
-Add 1 to the program arguments.
+Add the stream id (0,1,2) to the program arguments.
