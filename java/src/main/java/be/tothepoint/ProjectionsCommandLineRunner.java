@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 class ProjectionsCommandLineRunner implements CommandLineRunner {
-    private static final Logger log = LoggerFactory.getLogger(ProjectionsCommandLineRunner.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProjectionsCommandLineRunner.class);
     private final EventStreamProvider eventStreamProvider;
     private final List<Projection> projections;
 
@@ -23,28 +23,45 @@ class ProjectionsCommandLineRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         final String stream = getStreamId(args);
         final List<Event> events = eventStreamProvider.loadResponses(stream);
+        runAllProjections(events);
+    }
+
+    private void runAllProjections(List<Event> events) {
+        logStart(events);
         projections.forEach(x -> projectEventStream(events, x));
+        logEnd();
+    }
+
+    private void logEnd() {
+        LOGGER.info("---------------------------------------------------------------");
+        LOGGER.info("End projections ");
+    }
+
+    private void logStart(List<Event> events) {
+        LOGGER.info("Event stream loaded with " + events.size() + " events.");
+        LOGGER.info("Starting projections ");
+        LOGGER.info("---------------------------------------------------------------");
     }
 
     private String getStreamId(String[] args) {
-        if (args.length < 1) {
-            log.warn("A stream id was expected. Defaulting to Zero.");
-            return "0";
-        }
-        else {
+        if (args.length < 1)
+            return getDefaultStream();
+        else
             return args[0];
-        }
+
+    }
+
+    private String getDefaultStream() {
+        LOGGER.warn("A stream id was expected. Defaulting to Zero.");
+        return "0";
     }
 
     @SuppressWarnings("unchecked")
     private void projectEventStream(List<Event> events, Projection x) {
         final Object project = x.project(events);
         final String resultMessage = x.buildResultMessage(project);
-        log.info(resultMessage);
+        LOGGER.info(x.getClass().getSimpleName() + " says [" + resultMessage + "]");
     }
-
-
-
 
 
 }
