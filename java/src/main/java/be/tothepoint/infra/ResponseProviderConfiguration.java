@@ -21,8 +21,8 @@ public class ResponseProviderConfiguration {
 
 	@Bean
 	@Profile("fs")
-	public ResponseProvider jsonFileResponseProvider(ObjectMapper objectMapper, ApplicationContext applicationContext) {
-		return new JsonFileResponseProvider(objectMapper, applicationContext);
+	public ResponseProvider jsonFileResponseProvider(ObjectMapper objectMapper) {
+		return new JsonFileResponseProvider(objectMapper);
 	}
 
 	@Bean
