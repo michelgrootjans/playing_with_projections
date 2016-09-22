@@ -28,10 +28,12 @@ class ProjectionsCommandLineRunner implements CommandLineRunner {
 
     private String getStreamId(String[] args) {
         if (args.length < 1) {
-            log.error("A stream id was expected. Defaulting to Zero.");
+            log.warn("A stream id was expected. Defaulting to Zero.");
             return "0";
         }
-        return args[0];
+        else {
+            return args[0];
+        }
     }
 
     @SuppressWarnings("unchecked")

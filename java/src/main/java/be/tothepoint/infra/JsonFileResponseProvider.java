@@ -3,6 +3,8 @@ package be.tothepoint.infra;
 import be.tothepoint.Event;
 import be.tothepoint.ResponseProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 
 import java.io.File;
@@ -11,8 +13,8 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-public class JsonFileResponseProvider implements ResponseProvider {
-
+class JsonFileResponseProvider implements ResponseProvider {
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonFileResponseProvider.class);
     private ObjectMapper mapper;
     private ApplicationContext applicationContext;
 
@@ -20,18 +22,24 @@ public class JsonFileResponseProvider implements ResponseProvider {
         this.mapper = mapper;
         this.applicationContext = applicationContext;
     }
-//TODO ugly code
+
+    //TODO ugly code
     @Override
-    public List<Event> loadResponses(String stream) {
+    public List<Event> loadResponses(String streamId) {
+        logStart(streamId);
         try {
             InputStream jsonFileStream = applicationContext
-                    .getResource(getDataDirectory(stream))
+                    .getResource(getDataDirectory(streamId))
                     .getInputStream();
 
             return Arrays.asList(mapper.readValue(jsonFileStream, Event[].class));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void logStart(String stream) {
+        LOGGER.info("Loading event stream with id " + stream + " from file system.");
     }
 
     private String getDataDirectory(String stream) {
