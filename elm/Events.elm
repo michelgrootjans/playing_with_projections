@@ -9,6 +9,7 @@ type Event
     | EQuizWasCreated QuizWasCreated
     | EQuizWasPublished QuizWasPublished
     | EQuestionAddedToQuiz QuestionAddedToQuiz
+    | EGameWasFinished GameWasFinished
 
 
 type alias PlayerHasRegistered =
@@ -44,6 +45,12 @@ type alias QuestionAddedToQuiz =
     , answer : String
     }
 
+type alias GameWasFinished =
+    { game_id : String
+    , id : String
+    , timestamp : String
+    }
+
 
 decodeEvents : Json.Decode.Decoder (List Event)
 decodeEvents =
@@ -69,6 +76,9 @@ eventInfo eventName =
 
         "QuestionAddedToQuiz" ->
             Json.Decode.map (\e -> EQuestionAddedToQuiz e) decodeQuestionAddedToQuiz
+
+        "GameWasFinished" ->
+            Json.Decode.map (\e -> EGameWasFinished e) decodeGameWasFinished
 
         _ ->
             Json.Decode.fail (eventName ++ " is not a recognized event")
@@ -110,4 +120,10 @@ decodeQuestionAddedToQuiz =
         |: (at ["timestamp"] Json.Decode.string)
         |: (at ["payload", "answer"] Json.Decode.string)
 
+decodeGameWasFinished : Json.Decode.Decoder GameWasFinished
+decodeGameWasFinished =
+    Json.Decode.succeed GameWasFinished
+        |: (at ["payload", "game_id"] Json.Decode.string)
+        |: (at ["id"] Json.Decode.string)
+        |: (at ["timestamp"] Json.Decode.string)
 
