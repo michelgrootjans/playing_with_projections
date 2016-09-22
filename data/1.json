@@ -1,0 +1,314 @@
+[
+  {
+    "id": "844d3bf4-4f0e-47c2-ad12-fdc4dc53c967",
+    "type": "PlayerHasRegistered",
+    "timestamp": "2016-05-28T18:06:30Z",
+    "payload": {
+      "player_id": "0d31051a-1ce2-479a-8a0f-b1dcea36197d",
+      "first_name": "Alden",
+      "last_name": "O'Connell"
+    }
+  },
+  {
+    "id": "ebd6bfac-f7ba-416c-a70b-314a94407dbf",
+    "type": "PlayerHasRegistered",
+    "timestamp": "2016-05-31T14:58:29Z",
+    "payload": {
+      "player_id": "55ddb06a-06a3-4c03-9687-a7da4abc219b",
+      "first_name": "Garrison",
+      "last_name": "Boyle"
+    }
+  },
+  {
+    "id": "52924a3e-8c49-4238-bcc9-d83eeeeeccab",
+    "type": "QuizWasCreated",
+    "timestamp": "2016-06-27T05:22:29Z",
+    "payload": {
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093",
+      "owner_id": "55ddb06a-06a3-4c03-9687-a7da4abc219b",
+      "quiz_title": "Pokemon!"
+    }
+  },
+  {
+    "id": "bbc227d9-3025-4e97-bedb-868b99786621",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-06-27T05:23:47Z",
+    "payload": {
+      "question_id": "9d95d6b6-8aa8-4275-8f03-1f83a512ce2f",
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093",
+      "question": "What pokemon can I find in Anistar City?",
+      "answer": "Magnemite"
+    }
+  },
+  {
+    "id": "3a36e405-28e1-4094-a441-14d9d176e9de",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-06-27T05:24:32Z",
+    "payload": {
+      "question_id": "f4b566ac-94b2-41c1-971d-6698e97cd204",
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093",
+      "question": "Where can I find Charmeleon?",
+      "answer": "Two Island"
+    }
+  },
+  {
+    "id": "6421e4ab-7a6a-4fb5-b02e-59c9b9d246e2",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-06-27T05:26:53Z",
+    "payload": {
+      "question_id": "5f66f984-65d4-4494-99e5-ce2905119ef7",
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093",
+      "question": "What pokemon can I find in Saffron City?",
+      "answer": "Magikarp"
+    }
+  },
+  {
+    "id": "372b40bb-d255-4479-8ea6-a76c19491794",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-06-27T05:27:00Z",
+    "payload": {
+      "question_id": "34e9e08a-14b1-4c58-84c3-f0bc8c3e5890",
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093",
+      "question": "What pokemon can I find in Pastoria City?",
+      "answer": "Golem"
+    }
+  },
+  {
+    "id": "a15d43d5-7633-48b3-b3cf-6c5e89a52c9e",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-06-27T05:27:47Z",
+    "payload": {
+      "question_id": "cf49455f-a22c-45ce-890d-871ffdb96e86",
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093",
+      "question": "What pokemon can I find in Cerulean City?",
+      "answer": "Starmie"
+    }
+  },
+  {
+    "id": "2f91256d-5445-47d4-a95a-d04ddd1fc37a",
+    "type": "QuizWasPublished",
+    "timestamp": "2016-06-27T05:31:40Z",
+    "payload": {
+      "quiz_id": "57e16634-975c-4351-9419-63a4ecd6b093"
+    }
+  },
+  {
+    "id": "c0e1c83b-ebb7-432c-bab2-121f396f8fae",
+    "type": "QuizWasCreated",
+    "timestamp": "2016-07-26T20:30:30Z",
+    "payload": {
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0",
+      "owner_id": "0d31051a-1ce2-479a-8a0f-b1dcea36197d",
+      "quiz_title": "Superpowers!"
+    }
+  },
+  {
+    "id": "5f2b1dac-a0a7-4c2d-a741-aa07f79fa88b",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-26T20:33:20Z",
+    "payload": {
+      "question_id": "c387640e-cc91-49d1-8f1a-cebd1eb6d39d",
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0",
+      "question": "Who has Illumination?",
+      "answer": "Moon Knight Thirteen"
+    }
+  },
+  {
+    "id": "85e8c622-3379-489d-8d27-5dfceed043ae",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-26T20:33:51Z",
+    "payload": {
+      "question_id": "ec4a969e-c126-494f-9ad2-69b62bc339a0",
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0",
+      "question": "What power does Monarch have?",
+      "answer": "Magic Resistance"
+    }
+  },
+  {
+    "id": "3b3e2d11-4286-48ab-821b-8e5c37512fec",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-26T20:34:06Z",
+    "payload": {
+      "question_id": "a8a63305-52e0-4ab7-9f57-9ecb2f792f42",
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0",
+      "question": "What power does Triplicate Boy have?",
+      "answer": "Possession"
+    }
+  },
+  {
+    "id": "3457fb49-6def-4a30-a27e-db717aed2694",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-26T20:35:26Z",
+    "payload": {
+      "question_id": "d3d8fd6e-1cf8-4402-abd7-3428050983ad",
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0",
+      "question": "What power does Giant A-Bomb Boy have?",
+      "answer": "Intangibility"
+    }
+  },
+  {
+    "id": "f1d6340c-e0dd-42ea-9253-62fdb2159199",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-26T20:36:05Z",
+    "payload": {
+      "question_id": "19900bfa-4238-4757-93c2-301245ec4580",
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0",
+      "question": "What power does Red Maxima have?",
+      "answer": "Thermokinesis"
+    }
+  },
+  {
+    "id": "11e1581a-5985-4ac0-ade5-88ac022656dd",
+    "type": "QuizWasPublished",
+    "timestamp": "2016-07-26T20:37:17Z",
+    "payload": {
+      "quiz_id": "fe5ee30b-f5e0-4d72-b5c5-249eb5a314e0"
+    }
+  },
+  {
+    "id": "7ef19203-63f1-43a1-894d-55c1610592d6",
+    "type": "QuizWasCreated",
+    "timestamp": "2016-07-30T22:10:29Z",
+    "payload": {
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141",
+      "owner_id": "55ddb06a-06a3-4c03-9687-a7da4abc219b",
+      "quiz_title": "Who's the more foolish; the fool, or the fool who follows him?"
+    }
+  },
+  {
+    "id": "df64e2aa-c0e3-4ebb-a337-bd53463bbff4",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-30T22:11:45Z",
+    "payload": {
+      "question_id": "b391cdd8-5678-4e50-9820-b014140a0d20",
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141",
+      "question": "Who owns 4-LOM?",
+      "answer": "Sebulba"
+    }
+  },
+  {
+    "id": "0c3d4d17-0903-45fb-8f83-f0d5f9d45875",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-30T22:13:07Z",
+    "payload": {
+      "question_id": "cc9f9442-b555-4ac0-879a-de131ede9e29",
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141",
+      "question": "What vehicle does Darth Vader use?",
+      "answer": "Imperial Shuttle"
+    }
+  },
+  {
+    "id": "3c9eb941-af6a-457a-b1c9-344be8d07199",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-30T22:13:52Z",
+    "payload": {
+      "question_id": "69a44f98-7f25-441d-b880-dd4225e1352c",
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141",
+      "question": "What vehicle does Poe Dameron use?",
+      "answer": "Vulture Droid"
+    }
+  },
+  {
+    "id": "ce838489-eeb7-41b9-bafb-2e766f7b4e2f",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-30T22:13:52Z",
+    "payload": {
+      "question_id": "72f27bc8-a732-41fd-b328-a02dd48433bb",
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141",
+      "question": "What species is Yoda?",
+      "answer": "Gungan"
+    }
+  },
+  {
+    "id": "00dce1c6-e5ee-4b68-8540-703deede67da",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-07-30T22:14:58Z",
+    "payload": {
+      "question_id": "17cfed6c-79a1-497b-8781-e1c36850d5ea",
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141",
+      "question": "What species is Jar Jar Binks?",
+      "answer": "Neimoidian"
+    }
+  },
+  {
+    "id": "2bdf1bf4-4fdc-4df9-ac4a-910c5d8ad49e",
+    "type": "QuizWasPublished",
+    "timestamp": "2016-07-30T22:17:23Z",
+    "payload": {
+      "quiz_id": "8483bd25-76b7-4381-be62-80c882c04141"
+    }
+  },
+  {
+    "id": "c1e85c09-1536-47a4-98e3-ad0809ba8384",
+    "type": "QuizWasCreated",
+    "timestamp": "2016-08-26T22:54:30Z",
+    "payload": {
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097",
+      "owner_id": "0d31051a-1ce2-479a-8a0f-b1dcea36197d",
+      "quiz_title": "Gotta catch em all"
+    }
+  },
+  {
+    "id": "e3a68eb2-8ba3-41be-89cd-48ea9a03a826",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-08-26T22:57:51Z",
+    "payload": {
+      "question_id": "0f4a0bd4-1c51-4a4e-aa4a-c2a56bf10f59",
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097",
+      "question": "What pokemon can I find in Goldenrod City?",
+      "answer": "Poliwrath"
+    }
+  },
+  {
+    "id": "3dd9a4e8-dee9-413e-a6e7-30bb74a462b8",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-08-26T22:58:33Z",
+    "payload": {
+      "question_id": "2a557346-83e1-45c6-9daa-83782c1d397b",
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097",
+      "question": "What pokemon can I find in Seven Island?",
+      "answer": "Vaporeon"
+    }
+  },
+  {
+    "id": "5cb0c09c-08c7-4188-a997-0bc9a774180f",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-08-26T22:58:58Z",
+    "payload": {
+      "question_id": "85425ad7-02bd-4ebd-9229-5638a9085f5d",
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097",
+      "question": "What pokemon can I find in Verdanturf Town?",
+      "answer": "Exeggutor"
+    }
+  },
+  {
+    "id": "fcf371ee-f765-4d29-b51d-bcc0393681c3",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-08-26T22:59:24Z",
+    "payload": {
+      "question_id": "061212a5-145b-402f-9c3f-121143e77814",
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097",
+      "question": "What pokemon can I find in Mauville City?",
+      "answer": "Kakuna"
+    }
+  },
+  {
+    "id": "cb1be65f-4a1e-477f-a7b0-4429e397fc1b",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-08-26T23:00:09Z",
+    "payload": {
+      "question_id": "27f3fa1a-77cd-4b34-9841-5d2851b2ec1a",
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097",
+      "question": "What pokemon can I find in Three Island?",
+      "answer": "Nidorina"
+    }
+  },
+  {
+    "id": "3feac2cd-f4d7-4b63-95e4-17b8025d6bc0",
+    "type": "QuizWasPublished",
+    "timestamp": "2016-08-26T23:01:56Z",
+    "payload": {
+      "quiz_id": "3f9a3a6b-f276-4185-a543-fad13192a097"
+    }
+  }
+]
