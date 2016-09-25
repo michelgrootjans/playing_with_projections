@@ -11,7 +11,13 @@ def parse_events_from_http(stream):
     events = json.loads(data)
     return events
 
+def parse_events_from_file(stream):
+    with open("../data/" + stream + ".json") as json_file:
+        events = json.load(json_file)
 
-events = parse_events_from_http("0")
+    return events
+
+
+events = parse_events_from_file("2")
 all_types = [e["type"] for e in events]
 print(all_types)
