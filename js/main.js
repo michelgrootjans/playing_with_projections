@@ -56,7 +56,7 @@ function registeredPlayersProjection(events) {
 
 // Chose fetchFromUrl or fetchFromFile
 
-fetchFromFile(0)
+fetchFromFile('2')
     // If you want to have the timestamps of the event as a Date object rather than a string, enable this
     // transformation. This transformation mutates the events. After the transformation, the timestamp is a Date
     // Also see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date for more info.
