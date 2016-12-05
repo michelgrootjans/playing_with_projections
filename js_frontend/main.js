@@ -1,5 +1,5 @@
-function fetchJson(name) {
-    return fetch(`https://playing-with-projections.herokuapp.com/stream/${name}`, {method: 'GET'})
+function fetchJson(url) {
+    return fetch(url, {method: 'GET'})
         .then(resp => resp.json())
 }
 
@@ -24,7 +24,7 @@ function makeEventMap(events) {
             acc[dateString][event.type] = 0;
         }
         acc[dateString][event.type] += 1;
-        
+
         return acc;
     }, {});
 }
@@ -40,35 +40,62 @@ function visualizationData(jsonData) {
         return [key].concat(numberOfEventsPerType);
     });
 
-    return header.concat(data);
+    return {table: header.concat(data), eventTypes};
 }
 
-function drawAnnotations(dataTable) {
-    var data = google.visualization.arrayToDataTable(dataTable);
+const chartOptions = {
+      chart: {
+        title: 'Playing with projections',
+        subtitle: 'Events',
+      },
+      bars: 'vertical',
+      vAxis: {format: 'decimal'},
+      height: 700,
+      colors: ['#1b9e77', '#d95f02', '#7570b3'],
+      explorer: {}
+};
 
-    var options = {
-          chart: {
-            title: 'Playing with projections',
-            subtitle: 'Events',
-          },
-          bars: 'vertical',
-          vAxis: {format: 'decimal'},
-          height: 700,
-          colors: ['#1b9e77', '#d95f02', '#7570b3'],
-          explorer: {}
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('chart_div')); 
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+function filter(typeIndex, chart, dataTable, options) {
+    const view = new google.visualization.DataView(dataTable);
+    const columnsToHide = typeIndex > -1 ? view.getViewColumns().filter(row => row != 0 && row != typeIndex + 1) : [];
+    view.hideColumns(columnsToHide);
+    chart.draw(view, chartOptions);
 }
 
-function init() {
-    fetchJson('1').then(data => {
-        const dataToVisualize = visualizationData(data);
-        drawAnnotations(dataToVisualize);
+function renderWithData(data) {
+    const {table, eventTypes} = visualizationData(data);
+
+    const dataTable = google.visualization.arrayToDataTable(table);
+
+    const chart = new google.charts.Bar(document.getElementById('chart_div'));
+    chart.draw(dataTable, google.charts.Bar.convertOptions(chartOptions));
+
+    const options = eventTypes.map(type => ({text: type, value: type}));
+    options.push({text: 'Show all', value: -1});
+
+    const app = new Vue({
+      el: '#vue',
+      data: {
+        selected: 'all',
+        options
+      },
+      methods: {
+          updateDraw: function(event) {
+              const typeIndex = eventTypes.indexOf(event.target.value);
+              filter(typeIndex, chart, dataTable, chartOptions);
+          }
+      }
     })
 
 }
 
+function init() {
+    const url = 'http://localhost:8000/';
+    // const url = 'https://playing-with-projections.herokuapp.com/stream/';
+    const urlToFetch = `${url}test.json`;
+    fetchJson(urlToFetch).then(renderWithData);
+}
+
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(init);
+
