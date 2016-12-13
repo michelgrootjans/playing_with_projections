@@ -21,8 +21,8 @@ end
 
 stream_id = ARGV.first || 0
 
-raw_data = read_from_uri(stream_id)
-# raw_data = read_from_file(stream_id)
+# raw_data = read_from_uri(stream_id)
+raw_data = read_from_file(stream_id)
 
 events = JSON.parse(raw_data).map(&method(:transform_date))
 puts "Number of events: #{events.count}"
