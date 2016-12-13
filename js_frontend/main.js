@@ -91,8 +91,7 @@ function renderWithData(data) {
 
 function init() {
     const url = 'http://localhost:8000/';
-    // const url = 'https://playing-with-projections.herokuapp.com/stream/';
-    const urlToFetch = `${url}test.json`;
+    const urlToFetch = `${url}7_2015_01_2017_01.json`;
     fetchJson(urlToFetch).then(renderWithData);
 }
 
