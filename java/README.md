@@ -2,20 +2,17 @@ Client requirement:
 java 1.8
 
 To build and run all tests:
-> ./gradlew build
+> ./gradlew build --offline
 
 To run the unit tests only:
-> ./gradlew test
+> ./gradlew test --offline
 
-To run the client, running all projections:
-> ./gradlew bootRun
+To run the application, create a fatJar first, then execute it
+> ./gradlew clean build fatJar --offline
+> java -jar build/libs/ddd-workshop-0.0.1-SNAPSHOT-all.jar
 
-The b.t.ProjectionsCommandLineRunner will print out the projections result message
-
-
-By default the eventstream is retrieved from the server. In case of network problems run the application with the spring profile fs.
-To your VM Options add 
->-Dspring.profiles.active=fs 
+By default the eventstream is retrieved from the server. In case of network problems Wire the FileEventStreamProvider 
+in the Main class instead of the RestEventStreamProvider. 
 
 There are different streams of events. If no stream is specified the system will default to zero. 
 The stream id is taken as the first argument pass to the application.
