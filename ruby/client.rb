@@ -8,8 +8,7 @@ def read_from_uri stream_id
   RestClient.get stream
 end
 
-def read_from_file stream_id
-  file_path = "../data/#{stream_id}.json"
+def read_from_file file_path
   puts "Reading from '#{file_path}'"
   file_content = File.read(file_path)
 end
@@ -19,10 +18,10 @@ def transform_date event
   event
 end
 
-stream_id = ARGV.first || 0
+stream = ARGV.first || '../data/0.json'
 
-# raw_data = read_from_uri(stream_id)
-raw_data = read_from_file(stream_id)
+# raw_data = read_from_uri(stream)
+raw_data = read_from_file(stream)
 
 events = JSON.parse(raw_data).map(&method(:transform_date))
 puts "Number of events: #{events.count}"

@@ -5,11 +5,11 @@ To prepare the client:
 bundle install
 ```
 
-To run the client
+To run the client for a default file
 ```
 ruby client.rb
 ```
-or to read from a specific stream
+or to read from a specific file
 ```
-ruby client.rb 0
+ruby client.rb ../data/1.json
 ```
