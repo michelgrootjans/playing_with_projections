@@ -24,7 +24,7 @@ function fetchFromUrl(hostname, port, path) {
 
 function fetchFromFile(stream) {
   return new Promise((resolve, reject) => {
-    fs.readFile(`../data/${stream}.json`, 'utf-8', (err, data) => {
+    fs.readFile(stream, 'utf-8', (err, data) => {
       if(err) reject(err);
 
       resolve(JSON.parse(data));
@@ -32,7 +32,9 @@ function fetchFromFile(stream) {
   });
 }
 
-// Transform the events (timestamp from string to Date)
+// If you want to have the timestamps of the event as a Date object rather than a string, enable this
+// transformation. This transformation mutates the events. After the transformation, the timestamp is a Date
+// Also see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date for more info.
 function transformTimestampToDate(events) {
   return events.map(event => {
     event.timestamp = new Date(event.timestamp);
@@ -41,35 +43,13 @@ function transformTimestampToDate(events) {
 }
 
 // Write your projection here
-
-function registeredPlayersProjection(events) {
-    return events.reduce((acc, event) => {
-        var payload = event.payload;
-        switch (event.type) {
-            case 'PlayerHasRegistered': {
-                acc[payload.player_id] = {first_name: payload.first_name, last_name: payload.last_name}
-                return acc;
-            }
-            default: return acc
-        }
-    }, {});
-}
-
-// Chose fetchFromUrl or fetchFromFile
-
-//fetchFromFile('2')
-// If you want to have the timestamps of the event as a Date object rather than a string, enable this
-// transformation. This transformation mutates the events. After the transformation, the timestamp is a Date
-// Also see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date for more info.
-// .then(events => transformTimestampToDate(events))
-//.then(events => console.log(registeredPlayersProjection(events)))
-//   .catch(error => console.log(error));
-//
-
 function eventCounter(events) {
     return events.reduce((acc, event) => acc + 1, 0);
 }
 
-fetchFromUrl('localhost', 8000, '/test_from_run.json')
+//fetchFromUrl('localhost', 8000, '/test_from_run.json')
+var fileName = process.argv[2];
+fetchFromFile(fileName)
+    .then(events => transformTimestampToDate(events))
     .then(events => console.log(eventCounter(events)))
     .catch(error => console.log(error))
