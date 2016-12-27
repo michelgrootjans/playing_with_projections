@@ -1,4 +1,4 @@
-package be.tothepoint.infra;
+package be.playing.with.projections.infra;
 
 import java.io.IOException;
 import java.net.URL;
@@ -6,18 +6,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import be.tothepoint.model.Event;
-import be.tothepoint.model.EventStreamProvider;
+import be.playing.with.projections.model.Event;
+import be.playing.with.projections.model.EventStreamProvider;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class RestEventStreamProvider implements EventStreamProvider {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(RestEventStreamProvider.class);
   private static final String URL = "https://playing-with-projections.herokuapp.com/stream/";
   private ObjectMapper objectMapper;
 
@@ -39,7 +36,7 @@ public class RestEventStreamProvider implements EventStreamProvider {
   }
 
   private void logStart(String streamId) {
-    LOGGER.info("Loading event stream with id " + streamId + " from Url " + URL);
+    System.out.println("Loading event stream with id " + streamId + " from Url " + URL);
   }
 
   private Event[] retrieveEvents(String stream) {

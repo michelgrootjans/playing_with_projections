@@ -1,7 +1,8 @@
-package be.tothepoint.model.projections;
+package be.playing.with.projections.model.projections;
 
-import be.tothepoint.model.Event;
-import be.tothepoint.EventBuilder;
+import be.playing.with.projections.model.Event;
+import be.playing.with.projections.EventBuilder;
+import be.playing.with.projections.model.EventType;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.PLAYER_JOINED_GAME)
+                .withType(EventType.PLAYER_JOINED_GAME)
                 .build();
     }
 
@@ -61,7 +62,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.PLAYER_HAS_REGISTERED)
+                .withType(EventType.PLAYER_HAS_REGISTERED)
                 .build();
     }
 
@@ -69,7 +70,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.QUESTION_WAS_ASKED)
+                .withType(EventType.QUESTION_WAS_ASKED)
                 .build();
     }
 
@@ -77,7 +78,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.GAME_WAS_STARTED)
+                .withType(EventType.GAME_WAS_STARTED)
                 .build();
     }
 
@@ -85,7 +86,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.ANSWER_WAS_GIVEN)
+                .withType(EventType.ANSWER_WAS_GIVEN)
                 .build();
     }
 
@@ -93,7 +94,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.QUESTION_WAS_COMPLETED)
+                .withType(EventType.QUESTION_WAS_COMPLETED)
                 .build();
     }
 
@@ -101,7 +102,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.GAME_WAS_OPENED)
+                .withType(EventType.GAME_WAS_OPENED)
                 .build();
     }
 
@@ -109,7 +110,7 @@ public class EventStreamFactory {
         return EventBuilder.newBuilder()
                 .withId("Event_" + id)
                 .withTimestamp(LocalDateTime.now())
-                .withType(EventTypes.GAME_WAS_FINISHED)
+                .withType(EventType.GAME_WAS_FINISHED)
                 .build();
     }
 }

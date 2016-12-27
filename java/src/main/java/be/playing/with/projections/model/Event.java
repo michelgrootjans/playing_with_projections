@@ -1,4 +1,4 @@
-package be.tothepoint.model;
+package be.playing.with.projections.model;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -12,11 +12,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Event {
 
   private String id;
-  private String type;
+  private EventType type;
   private LocalDateTime timestamp;
   private Map<String, String> payload;
 
-  public Event(String id, String type, LocalDateTime timestamp, Map<String, String> payload) {
+  public Event(String id, EventType type, LocalDateTime timestamp, Map<String, String> payload) {
     this.id = id;
     this.type = type;
     this.timestamp = timestamp;
@@ -31,7 +31,7 @@ public class Event {
     return id;
   }
 
-  public String getType() {
+  public EventType getType() {
     return type;
   }
 

@@ -1,15 +1,16 @@
-package be.tothepoint;
+package be.playing.with.projections;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-import be.tothepoint.model.Event;
+import be.playing.with.projections.model.Event;
+import be.playing.with.projections.model.EventType;
 
 public class EventBuilder {
 
   private String id;
-  private String type;
+  private EventType type;
   private LocalDateTime timestamp;
   private Map<String, String> payload = new HashMap<>();
 
@@ -25,7 +26,7 @@ public class EventBuilder {
     return this;
   }
 
-  public EventBuilder withType(String val) {
+  public EventBuilder withType(EventType val) {
     type = val;
     return this;
   }
@@ -49,7 +50,7 @@ public class EventBuilder {
     if (id == null || id.isEmpty()) {
       throw new RuntimeException("Id is required");
     }
-    if (type == null || type.isEmpty()) {
+    if (type == null) {
       throw new RuntimeException("Type is required");
     }
     if (timestamp == null) {

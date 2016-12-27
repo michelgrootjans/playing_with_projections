@@ -1,4 +1,4 @@
-package be.tothepoint.model;
+package be.playing.with.projections.model;
 
 import java.util.List;
 

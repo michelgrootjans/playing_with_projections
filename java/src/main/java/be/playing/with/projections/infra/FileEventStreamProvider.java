@@ -1,4 +1,4 @@
-package be.tothepoint.infra;
+package be.playing.with.projections.infra;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,18 +8,15 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
-import be.tothepoint.model.Event;
-import be.tothepoint.model.EventStreamProvider;
+import be.playing.with.projections.model.Event;
+import be.playing.with.projections.model.EventStreamProvider;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FileEventStreamProvider implements EventStreamProvider {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(FileEventStreamProvider.class);
   private final ObjectMapper mapper;
 
   public FileEventStreamProvider() {
@@ -58,7 +55,7 @@ public class FileEventStreamProvider implements EventStreamProvider {
   }
 
   private void logStart(String stream) {
-    LOGGER.info("Loading event stream with id " + stream + " from file system.");
+    System.out.println("Loading event stream with id " + stream + " from file system.");
   }
 
   private String buildStreamFilePath(String streamId) {
