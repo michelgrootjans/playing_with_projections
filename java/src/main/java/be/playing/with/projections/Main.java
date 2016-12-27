@@ -27,7 +27,7 @@ class Main {
 
   private static String getDefaultStream() {
     System.out.println("A stream id was expected. Defaulting to Zero.");
-    return "2";
+    return "0";
   }
 }
 

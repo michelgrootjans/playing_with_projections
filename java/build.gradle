@@ -61,11 +61,12 @@ task fatJar(type: Jar) {
   manifest {
     attributes 'Implementation-Title': 'Playing with projections',
         'Implementation-Version': jar.version,
-        'Main-Class': 'be.tothepoint.Main'
+        'Main-Class': 'be.playing.with.projections.Main'
   }
   baseName = jar.baseName + '-' + jar.version + '-all'
   from {configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}}
   with jar
 }
 
+tasks.jar.dependsOn fatJar
 
