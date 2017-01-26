@@ -2,6 +2,7 @@
 
 If you follow this workshop at [DDDEurope](https://dddeurope.com/2017/), please read this README.
 It would be nice if you already clone this repo and check a client in your favorite technology.
+If the client runs that is enough to get started. We will complete the first steps together in the workshop.
 
 # Getting started
 Clone or fork this repo.
@@ -17,7 +18,7 @@ Look in the client directories to get started in your preferred technology:
 - [Elixir](/elixir)
 - [Elm](/elm)
 
-# Make it ruby
+# Make it run
 Read the README.md of the choosen technology, and make it run.
 
 # First step
