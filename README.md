@@ -1,3 +1,8 @@
+# Important information for DDDEurope.
+
+If you follow this workshop at [DDDEurope](https://dddeurope.com/2017/), please read this README.
+It would be nice if you already clone this repo and check a client in your favorite technology.
+
 # Getting started
 Clone or fork this repo.
 
