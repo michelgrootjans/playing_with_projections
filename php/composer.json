@@ -1,0 +1,10 @@
+{
+    "name": "playing-with-projections/playing-with-projections",
+    "description": "Playing with projections",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
