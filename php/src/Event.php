@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: peterpacket
- * Date: 25/01/2017
- * Time: 23:59
- */
+
 abstract class Event
 {
 

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: peterpacket
- * Date: 25/01/2017
- * Time: 23:54
- */
 
 $start = microtime(true);
 define('DATA_DIR', dirname(dirname(__FILE__)) . '/data');
