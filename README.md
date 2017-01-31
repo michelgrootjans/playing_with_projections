@@ -17,6 +17,7 @@ Look in the client directories to get started in your preferred technology:
 - [Ruby](/ruby)
 - [Elixir](/elixir)
 - [Elm](/elm)
+- [Php](/php)
 
 # Make it run
 Read the README.md of the choosen technology, and make it run.
