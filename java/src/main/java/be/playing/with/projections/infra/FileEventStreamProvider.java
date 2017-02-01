@@ -61,6 +61,6 @@ public class FileEventStreamProvider implements EventStreamProvider {
   private String buildStreamFilePath(String streamId) {
     final String currentAbsolutePath = new File("").toPath().toAbsolutePath().toString();
     final String rootPath = currentAbsolutePath.split("java")[0];
-    return "/" + rootPath + "data/" + streamId + ".json";
+    return streamId;
   }
 }
