@@ -1,17 +1,14 @@
 defmodule QuizzyClient do
     alias QuizzyClient.Events.{Meta, QuizWasCreated, PlayerHasRegistered, QuestionAddedToQuiz, QuizWasPublished}
-    alias QuizzyClient.Projections.Players
 
     def main do
-        %{body: body} = HTTPotion.get "https://playing-with-projections.herokuapp.com/stream/0"
+        file = File.read!("../data/0.json")
 
-        events = body
+        events = file
         |> Poison.Parser.parse!(keys: :atoms)
         |> Enum.map(&(parse(&1)))
 
-        players = Enum.reduce(events, Players.new, fn event, state -> Players.project(state, event) end)
-
-        Players.player_id_exists?(players, 1)
+        IO.inspect events
     end
 
     def parse(%{type: type} = event) do

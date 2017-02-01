@@ -14,7 +14,7 @@ defmodule QuizzyClient.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :httpotion]]
+    [applications: [:logger]]
   end
 
   # Dependencies can be Hex packages:
@@ -28,7 +28,7 @@ defmodule QuizzyClient.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:poison, "~> 2.0"},
-    {:credo, "~> 0.4", only: [:dev, :test]},
-    {:httpotion, "~> 3.0.0"}]
+    {:credo, "~> 0.4", only: [:dev, :test]}
+    ]
   end
 end
