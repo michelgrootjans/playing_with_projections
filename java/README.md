@@ -11,6 +11,9 @@ To run the application, create a fatJar first, then execute it
 > ./gradlew clean build fatJar --offline
 > java -jar build/libs/ddd-workshop-0.0.1-SNAPSHOT-all.jar
 
+To run with a specific stream, for example: data/1.json, run:
+> java -jar build/libs/ddd-workshop-0.0.1-SNAPSHOT-all.jar ../data/1.json
+
 By default the eventstream is retrieved from the server. In case of network problems Wire the FileEventStreamProvider 
 in the Main class instead of the RestEventStreamProvider. 
 
