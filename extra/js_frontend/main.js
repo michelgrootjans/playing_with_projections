@@ -91,7 +91,7 @@ function renderWithData(data) {
 
 function init() {
     const url = 'http://localhost:8000/';
-    const urlToFetch = `${url}7_2015_01_2017_01.json`;
+    const urlToFetch = `${url}5_2015_01_2017_01.json`;
     fetchJson(urlToFetch).then(renderWithData);
 }
 
