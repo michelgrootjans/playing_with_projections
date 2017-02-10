@@ -1,0 +1,72 @@
+apply plugin: 'java'
+
+jar {
+  baseName = 'ddd-workshop'
+  version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
+}
+
+ext.libs = "$projectDir/libs"
+ext.compileLib = "${libs}/compile"
+ext.runtimeLib = "${libs}/runtime"
+ext.testCompileLib = "${libs}/testCompile"
+ext.testRuntimeLib = "${libs}/testRuntime"
+ext.providedCompileLib = "${libs}/providedCompile"
+
+dependencies {
+  if (gradle.startParameter.isOffline()) {
+    println "--------------------"
+    println "Using local libs"
+    println "--------------------"
+    compile fileTree(dir: compileLib)
+    runtime fileTree(dir: runtimeLib)
+    testCompile fileTree(dir: testCompileLib)
+    testRuntime fileTree(dir: testRuntimeLib)
+  } else {
+    println "-------------------------------"
+    println "Using Maven central for libs"
+    println "-------------------------------"
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.5")
+    testCompile('junit:junit:4.12')
+  }
+}
+
+task deleteLibs(type: Delete) {
+  delete 'libs/compile'
+  delete 'libs/runtime'
+  delete 'libs/testCompile'
+  delete 'libs/testRuntime'
+}
+
+task copyToLibs(dependsOn: 'deleteLibs') << {
+  ['compile', 'runtime', 'testCompile', 'testRuntime'].each {scope ->
+    copy {
+      from configurations.getByName(scope).files
+      into "${libs}/${scope}"
+    }
+  }
+}
+
+task fatJar(type: Jar) {
+  manifest {
+    attributes 'Implementation-Title': 'Playing with projections',
+        'Implementation-Version': jar.version,
+        'Main-Class': 'be.playing.with.projections.Main'
+  }
+  baseName = jar.baseName + '-' + jar.version + '-all'
+  from {configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}}
+  with jar
+}
+
+tasks.jar.dependsOn fatJar
+
