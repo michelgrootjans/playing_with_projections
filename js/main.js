@@ -1,27 +1,6 @@
 var http = require("http");
 var fs = require('fs');
 
-function fetchFromUrl(hostname, port, path) {
-    var options = {
-        port,
-        hostname,
-        path: path,
-        method: 'GET'
-    };
-
-    return new Promise((resolve, reject) => {
-        var data = '';
-        var req = http.request(options, (res) => {
-            res.setEncoding('utf8');
-            res.on('data', (chunk) => data += chunk);
-            res.on('end', () => resolve(JSON.parse(data)))
-        });
-
-        req.on('error', e => reject(e));
-        req.end();
-    });
-}
-
 function fetchFromFile(stream) {
   return new Promise((resolve, reject) => {
     fs.readFile(stream, 'utf-8', (err, data) => {
@@ -47,7 +26,6 @@ function eventCounter(events) {
     return events.reduce((acc, event) => acc + 1, 0);
 }
 
-//fetchFromUrl('localhost', 8000, '/test_from_run.json')
 var fileName = process.argv[2];
 fetchFromFile(fileName)
     .then(events => transformTimestampToDate(events))
