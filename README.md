@@ -25,6 +25,7 @@ Read the README.md of the choosen technology, and make it run.
 Modify the code to print:
 - The number of events in the stream.
 - The distinct type of events in the stream.
+- Check the [wiki](https://github.com/michelgrootjans/playing_with_projections/wiki)
 
 # Short description
 The event stream contains several types of events. The event stream is a JSON array of events. An event is structured like this:
