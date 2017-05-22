@@ -1,55 +1,50 @@
-var http = require("http");
-var fs = require('fs');
+const fs = require('fs');
+const projections = require('./projections.js');
 
-function fetchFromUrl(hostname, port, path) {
-    var options = {
-        port,
-        hostname,
-        path: path,
-        method: 'GET'
-    };
+const filename = process.argv[2];
+const resultFile = '../data/results.json';
 
-    return new Promise((resolve, reject) => {
-        var data = '';
-        var req = http.request(options, (res) => {
-            res.setEncoding('utf8');
-            res.on('data', (chunk) => data += chunk);
-            res.on('end', () => resolve(JSON.parse(data)))
-        });
+// write your projections in ./projections.js
+Promise.all([readFile(filename), readFile(resultFile)])
+    .then(([file, results]) => [parseEvents(file), JSON.parse(results)])
+    .then(([events, results]) => exec(results[filename], events, projections))
+    .catch(error => console.log(error));
 
-        req.on('error', e => reject(e));
-        req.end();
+function exec(results, events, projections) {
+    for(let name in projections) {
+        if(projections.hasOwnProperty(name)) {
+            const start = Date.now();
+            const res = projections[name](events);
+            const end = Date.now();
+            if(results && results[name]) {
+                if(JSON.stringify(res) === JSON.stringify(results[name])) {
+                    console.log(name + ' OK ('+(end-start)+' ms)');
+                } else {
+                    console.error(name + ' ERROR ('+(end-start)+' ms)');
+                    console.error('result: ' + JSON.stringify(res, null, 2));
+                    return events; // break the loop
+                }
+            } else {
+                console.log(name + ' ('+(end-start)+' ms) results : ' + JSON.stringify(res));
+            }
+        }
+    }
+    return events;
+}
+
+
+function parseEvents(file) {
+    return JSON.parse(file).map(event => {
+        event.timestamp = new Date(event.timestamp);
+        return event;
     });
 }
 
-function fetchFromFile(stream) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(stream, 'utf-8', (err, data) => {
-      if(err) reject(err);
-
-      resolve(JSON.parse(data));
-    })
-  });
+function readFile(filename) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(filename, 'utf-8', (err, data) => {
+            if(err) reject(err);
+            else resolve(data);
+        });
+    });
 }
-
-// If you want to have the timestamps of the event as a Date object rather than a string, enable this
-// transformation. This transformation mutates the events. After the transformation, the timestamp is a Date
-// Also see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date for more info.
-function transformTimestampToDate(events) {
-  return events.map(event => {
-    event.timestamp = new Date(event.timestamp);
-    return event;
-  });
-}
-
-// Write your projection here
-function eventCounter(events) {
-    return events.reduce((acc, event) => acc + 1, 0);
-}
-
-//fetchFromUrl('localhost', 8000, '/test_from_run.json')
-var fileName = process.argv[2];
-fetchFromFile(fileName)
-    .then(events => transformTimestampToDate(events))
-    .then(events => console.log(eventCounter(events)))
-    .catch(error => console.log(error))
