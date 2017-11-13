@@ -1,0 +1,30 @@
+buildscript {
+	ext {
+		kotlinVersion = '1.1.51'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+	}
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = 'be.playing.with.projections.MainKt'
+
+defaultTasks 'run'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+	compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.5"
+	compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
+	testCompile 'junit:junit:4.11'
+	testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
+}
