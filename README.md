@@ -13,6 +13,7 @@ Look in the client directories to get started in your preferred technology:
 - [F#](/fsharp)
 - [Java](/java)
 - [javascript](/js)
+- [Kotlin](/kotlin)
 - [Php](/php)
 - [Python](/python)
 - [Ruby](/ruby)
