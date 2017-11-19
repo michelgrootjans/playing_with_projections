@@ -11,13 +11,4 @@ namespace PlayingWithProjections
       }
     }
 
-    public class RestEventReader
-    {
-      public string Read(string uri)
-      {
-        Console.WriteLine($"Reading '{uri}'");
-        return new RestClient().Get(uri).Result.ToString();
-      }
-    }
-
 }

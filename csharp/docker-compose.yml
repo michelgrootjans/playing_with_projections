@@ -1,0 +1,6 @@
+  csharp:
+    image: microsoft/dotnet:2.0.3-sdk
+    volumes:
+    - ..:/playing-with-projections
+    working_dir: /playing-with-projections/csharp
+    command: dotnet run ../data/0.json
