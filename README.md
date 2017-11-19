@@ -7,7 +7,8 @@ Clone or fork this repo.
 
 # Choose your preferred technology
 Look in the client directories to get started in your preferred technology:
-- [C# (classic)](/csharp)
+- [Clojure](/clojure)
+- [C# (dotnetcore)](/csharp)
 - [Elixir](/elixir)
 - [Elm](/elm)
 - [F#](/fsharp)
