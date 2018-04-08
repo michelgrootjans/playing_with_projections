@@ -1,0 +1,8 @@
+version: '3'
+services:
+  projections:
+    image: node:alpine
+    volumes:
+      - ..:/pwp
+    working_dir: /pwp/js
+    command: node main.js ../data/0.json
