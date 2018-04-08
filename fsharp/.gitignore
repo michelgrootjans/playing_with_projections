@@ -1,2 +1,3 @@
-.paket/paket.exe
+.paket
 packages/
+paket-files
