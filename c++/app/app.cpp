@@ -125,7 +125,8 @@ bool EatJsonObject(std::istream& jsonStream, const std::function<void(const Json
 
         while (!jsonStream.eof())
         {
-            jsonStream >> octet; 
+            octet = EatChar(jsonStream);
+
             if (octet == '{')
             {
                 ++braceDepth;
