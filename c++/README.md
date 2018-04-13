@@ -4,7 +4,7 @@
 
 I used Microsoft Visual Studio Enterprise 2017, VisualStudio.15.Release/15.5.7+27130.2036 (see your Help About).
 
-A solution and project file are in /C++/app/app.sln which should build and run everything you need.
+A solution and project file are in [$/C++/app](/C++/app) which should build and run everything you need.
 
 If you want to make it work on another platform, the source code should compile fine on any C++17 compiler.
 
