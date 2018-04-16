@@ -24,7 +24,7 @@ void EnumerateFiles(int argc, char** argv, const std::function<void(std::istream
 
     const auto fileOpener = [&](const fs::path& path)
     {
-        std::ifstream ifstream(path.native(), std::ios_base::binary);
+        std::ifstream ifstream(path.string(), std::ios_base::binary);
 
         streamReader(ifstream);
     };
@@ -33,7 +33,7 @@ void EnumerateFiles(int argc, char** argv, const std::function<void(std::istream
     {
         for (auto& file : fs::directory_iterator(path))
         {
-            if (file.path().native().find(L".json") == std::wstring::npos)
+            if (file.path().string().find(".json") == std::string::npos)
             {
                 continue;
             }
