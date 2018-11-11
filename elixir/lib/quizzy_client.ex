@@ -5,7 +5,7 @@ defmodule QuizzyClient do
         file = File.read!("../data/0.json")
 
         events = file
-        |> Poison.Parser.parse!(keys: :atoms)
+        |> Poison.Parser.parse!(%{keys: :atoms})
         |> Enum.map(&(parse(&1)))
 
         IO.inspect events
