@@ -1,4 +1,3 @@
 .idea
 elm-stuff
-data/*.json
-!data/0.json
+.vscode

@@ -1,4 +1,3 @@
-var http = require("http");
 var fs = require('fs');
 
 function fetchFromFile(stream) {
@@ -21,13 +20,13 @@ function transformTimestampToDate(events) {
   });
 }
 
-// Write your projection here
-function eventCounter(events) {
-    return events.reduce((acc, event) => acc + 1, 0);
-}
-
 var fileName = process.argv[2];
 fetchFromFile(fileName)
     .then(events => transformTimestampToDate(events))
     .then(events => console.log(eventCounter(events)))
     .catch(error => console.log(error))
+
+// Write your projection here
+function eventCounter(events) {
+  return events.reduce((acc, event) => acc + 1, 0);
+}

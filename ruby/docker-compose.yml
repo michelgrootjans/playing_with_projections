@@ -1,0 +1,6 @@
+  ruby:
+    image: ruby
+    volumes:
+    - ..:/playing-with-projections
+    working_dir: /playing-with-projections/ruby
+    command: ruby client.rb ../data/0.json

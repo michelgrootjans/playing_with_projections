@@ -1,0 +1,8 @@
+version: '3'
+services:
+  projections:
+    image: python:alpine
+    volumes:
+    - ..:/pwp
+    working_dir: /pwp/python
+    command: python main.py

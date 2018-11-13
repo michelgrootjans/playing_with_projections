@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1238",
+    "type": "PlayerHasRegistered",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "player_id": "1239",
+      "last_name": "Cespedes",
+      "first_name": "Ivey"
+    }
+  },
+  {
+    "id": "1627",
+    "type": "QuestionAddedToQuiz",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "quiz_id": "1623",
+      "question_id": "1626",
+      "question": "I am happy to take your donation",
+      "answer": "17d3ad"
+    }
+  },
+  {
+    "id": "3420",
+    "type": "GameWasOpened",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "quiz_id": "1623",
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "12638",
+    "type": "QuestionWasAsked",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "question_id": "1624",
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "12639",
+    "type": "TimerHasExpired",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "question_id": "1624",
+      "player_id": "1299",
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "12653",
+    "type": "GameWasFinished",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "1622",
+    "type": "QuizWasCreated",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "quiz_title": "Pokemon!",
+      "quiz_id": "1623",
+      "owner_id": "1241"
+    }
+  },
+  {
+    "id": "1630",
+    "type": "QuizWasPublished",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "quiz_id": "1623"
+    }
+  },
+  {
+    "id": "12636",
+    "type": "PlayerJoinedGame",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "player_id": "1317",
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "12637",
+    "type": "GameWasStarted",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "12641",
+    "type": "AnswerWasGiven",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "question_id": "1624",
+      "player_id": "1317",
+      "game_id": "3421",
+      "answer": "9a0130"
+    }
+  },
+  {
+    "id": "12642",
+    "type": "QuestionWasCompleted",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "question_id": "1624",
+      "game_id": "3421"
+    }
+  },
+  {
+    "id": "14533",
+    "type": "GameWasCancelled",
+    "timestamp": "2016-09-01T17:58:50.964327Z",
+    "payload": {
+      "game_id": "3665"
+    }
+  }
+]

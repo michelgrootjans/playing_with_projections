@@ -13,10 +13,10 @@ defmodule QuizzyClient do
 
     def parse(%{type: type} = event) do
         case type do
-            "QuizWasCreated" -> parse_event(QuizWasCreated, event)
+            "QuizWasCreated"      -> parse_event(QuizWasCreated, event)
             "PlayerHasRegistered" -> parse_event(PlayerHasRegistered, event)
             "QuestionAddedToQuiz" -> parse_event(QuestionAddedToQuiz, event)
-            "QuizWasPublished" -> parse_event(QuizWasPublished, event)
+            "QuizWasPublished"    -> parse_event(QuizWasPublished, event)
         end
     end
 

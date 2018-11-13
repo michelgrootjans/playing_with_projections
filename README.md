@@ -1,23 +1,24 @@
-# Important information for DDDEurope.
-
-If you follow this workshop at [DDDEurope](https://dddeurope.com/2017/), please read this README.
-It would be nice if you already clone this repo and check a client in your favorite technology.
-If the client runs that is enough to get started. We will complete the first steps together in the workshop.
+# Important information for the workshop.
+It would be nice if you clone this repo and check a client in your favorite technology before the workshop.
+If can get the client to run, you're all set. We will complete the first steps together in the workshop.
 
 # Getting started
 Clone or fork this repo.
 
 # Choose your preferred technology
 Look in the client directories to get started in your preferred technology:
-- [Java](/java)
-- [C# (classic)](/csharp)
-- [C# (dotnet core)](/dotnetcore)
-- [F#](/fshap)
-- [javascript](/js)
-- [Ruby](/ruby)
+- [Clojure](/clojure)
+- [C# (dotnetcore)](/csharp)
 - [Elixir](/elixir)
 - [Elm](/elm)
+- [F#](/fsharp)
+- [Java](/java)
+- [javascript](/js)
+- [Kotlin](/kotlin)
 - [Php](/php)
+- [Python](/python)
+- [Ruby](/ruby)
+- [ELK stack](/extra/elk)
 
 # Make it run
 Read the README.md of the choosen technology, and make it run.
@@ -26,6 +27,7 @@ Read the README.md of the choosen technology, and make it run.
 Modify the code to print:
 - The number of events in the stream.
 - The distinct type of events in the stream.
+- Check the [wiki](https://github.com/michelgrootjans/playing_with_projections/wiki)
 
 # Short description
 The event stream contains several types of events. The event stream is a JSON array of events. An event is structured like this:

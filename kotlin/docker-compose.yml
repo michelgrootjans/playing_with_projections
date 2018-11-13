@@ -1,0 +1,6 @@
+  kotlin:
+    image: gradle
+    volumes:
+    - ..:/playing-with-projections
+    working_dir: /playing-with-projections/kotlin
+    command: ./gradlew run

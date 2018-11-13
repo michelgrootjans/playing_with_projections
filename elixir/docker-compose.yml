@@ -1,0 +1,8 @@
+version: '3'
+services:
+  projections:
+    build: .
+    volumes:
+      - ..:/pwp
+    working_dir: /pwp/elixir
+    command: mix run -e QuizzyClient.main
