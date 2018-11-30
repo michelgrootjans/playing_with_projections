@@ -57,3 +57,7 @@ matrix:
       language: python
       python: "3.6"
       script: python main.py
+
+    - name: "Ruby"
+      language: ruby
+      script: ruby client.rb
