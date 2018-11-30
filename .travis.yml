@@ -2,8 +2,9 @@ matrix:
   include:
     - name: "C#"
       language: csharp
-      before_install: cd csharp
       dotnet: 2.0.3
+      mono: none
+      before_install: cd csharp
 
     - name: "Clojure"
       language: clojure
