@@ -46,5 +46,10 @@ matrix:
       language: kotlin
       before_install: cd kotlin
       script: ./gradlew test
-      
+     
+    - name: "PHP"
+      language: php
+      before_install: cd php
+      php: "7.1.9"
+      script: php run.php
 
