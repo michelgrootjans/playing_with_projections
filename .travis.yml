@@ -51,13 +51,16 @@ matrix:
       language: php
       before_install: cd php
       php: "7.1.9"
+      before_script: composer dump-autoload
       script: php run.php
 
     - name: "Python"
       language: python
+      before_install: cd python
       python: "3.6"
       script: python main.py
 
     - name: "Ruby"
       language: ruby
+      before_install: cd ruby
       script: ruby client.rb
