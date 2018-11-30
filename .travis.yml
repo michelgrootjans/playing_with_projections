@@ -53,3 +53,7 @@ matrix:
       php: "7.1.9"
       script: php run.php
 
+    - name: "Python"
+      language: python
+      python: "3.6"
+      script: python main.py
