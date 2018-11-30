@@ -1,0 +1,39 @@
+matrix:
+  include:
+    - name: "C#"
+      language: csharp
+      before_install: cd csharp
+      dotnet: 2.0.3
+
+    - name: "Clojure"
+      language: clojure
+      before_install: cd clojure
+
+    - name: "Elm"
+      language: elm
+      elm: 0.17.1
+      before_install: cd elm
+      script: elm make --yes Main.elm
+
+    - name: "Elixir"
+      elixir: '1.7.0'
+      language: elixir
+      before_install: cd elixir
+      script: mix compile
+
+    - name: "Java"
+      language: java
+      before_install: cd java
+      script: ./gradlew test
+    
+    - name: "JavaScript"
+      language: node_js
+      node_js: "node"
+      before_install: cd js
+    
+    - name: "Kotlin"
+      language: kotlin
+      before_install: cd kotlin
+      script: ./gradlew test
+      
+
