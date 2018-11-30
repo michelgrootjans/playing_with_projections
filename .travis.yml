@@ -25,6 +25,13 @@ matrix:
       before_install: cd elixir
       script: mix compile
 
+    - name: "F#"
+      language: csharp
+      mono: latest
+      before_install: cd fsharp
+      install: ./start.sh
+      script: fsharpi client.fsx
+
     - name: "Java"
       language: java
       before_install: cd java
