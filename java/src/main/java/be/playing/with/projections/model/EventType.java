@@ -14,7 +14,8 @@ public enum EventType {
   GAME_WAS_FINISHED("GameWasFinished"),
   QUIZ_WAS_CREATED("QuizWasCreated"),
   QUESTION_ADDED_TO_QUIZ("QuestionAddedToQuiz"),
-  QUIZ_WAS_PUBLISHED("QuizWasPublished");
+  QUIZ_WAS_PUBLISHED("QuizWasPublished"),
+  TIMER_HAS_EXPIRED("TimerHasExpired");
 
   private String representation;
 

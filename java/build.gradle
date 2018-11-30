@@ -13,7 +13,7 @@ repositories {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.4'
+  gradleVersion = '4.10.2'
 }
 
 ext.libs = "$projectDir/libs"
@@ -36,8 +36,17 @@ dependencies {
     println "-------------------------------"
     println "Using Maven central for libs"
     println "-------------------------------"
-    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.5")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.7")
+
     testCompile('junit:junit:4.12')
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    testCompile 'org.junit.vintage:junit-vintage-engine:5.3.1'
+    testCompile 'org.junit.platform:junit-platform-launcher:1.3.1'
+    testCompile 'org.junit.platform:junit-platform-runner:1.3.1'
+
+    testCompile 'org.assertj:assertj-core:3.11.1'
+    testCompile 'org.mockito:mockito-all:1.10.19'
   }
 }
 
