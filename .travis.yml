@@ -14,6 +14,8 @@ matrix:
     - name: "Elm"
       language: elm
       elm: 0.17.1
+      elm_test: 0.17.1
+      elm_format: 0.8.1
       before_install: cd elm
       script: elm make --yes Main.elm
 
