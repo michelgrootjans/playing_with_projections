@@ -1,0 +1,67 @@
+matrix:
+  include:
+    - name: "C#"
+      language: csharp
+      dotnet: 2.0.3
+      mono: none
+      before_install: cd csharp
+      script: dotnet build
+
+    - name: "Clojure"
+      language: clojure
+      before_install: cd clojure
+
+    - name: "Elm"
+      language: elm
+      elm: 0.17.1
+      elm_test: 0.17.1
+      elm_format: 0.8.1
+      before_install: cd elm
+      script: elm make --yes Main.elm
+
+    - name: "Elixir"
+      elixir: '1.7.0'
+      language: elixir
+      before_install: cd elixir
+      script: mix compile
+
+    - name: "F#"
+      language: csharp
+      mono: latest
+      before_install: cd fsharp
+      install: ./start.sh
+      script: fsharpi client.fsx
+
+    - name: "Java"
+      language: java
+      before_install: cd java
+      script: ./gradlew test
+    
+    - name: "JavaScript"
+      language: node_js
+      node_js: "node"
+      before_install: cd js
+      script: npm start
+    
+    - name: "Kotlin"
+      language: kotlin
+      before_install: cd kotlin
+      script: ./gradlew test
+     
+    - name: "PHP"
+      language: php
+      before_install: cd php
+      php: "7.1.9"
+      before_script: composer dump-autoload
+      script: php run.php
+
+    - name: "Python"
+      language: python
+      before_install: cd python
+      python: "3.6"
+      script: python main.py
+
+    - name: "Ruby"
+      language: ruby
+      before_install: cd ruby
+      script: ruby client.rb
