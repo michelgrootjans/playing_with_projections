@@ -6,3 +6,9 @@ services:
       - ..:/pwp
     working_dir: /pwp/elixir
     command: mix run -e QuizzyClient.main
+    # In case you want to use tests to verify
+    # your implementations, rather than running
+    # the client production code, please comment
+    # the command above and uncomment the following
+    # one instead.
+    # command: mix test
