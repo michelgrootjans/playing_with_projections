@@ -23,7 +23,7 @@ matrix:
       elixir: '1.7.0'
       language: elixir
       before_install: cd elixir
-      script: mix compile
+      script: mix test
 
     - name: "F#"
       language: csharp
@@ -36,18 +36,18 @@ matrix:
       language: java
       before_install: cd java
       script: ./gradlew test
-    
+
     - name: "JavaScript"
       language: node_js
       node_js: "node"
       before_install: cd js
       script: npm start
-    
+
     - name: "Kotlin"
       language: kotlin
       before_install: cd kotlin
       script: ./gradlew test
-     
+
     - name: "PHP"
       language: php
       before_install: cd php
