@@ -11,4 +11,4 @@ services:
     # the client production code, please comment
     # the command above and uncomment the following
     # one instead.
-    # command: mix test
+    # command: mix test --trace

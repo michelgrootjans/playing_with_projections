@@ -23,7 +23,7 @@ matrix:
       elixir: '1.7.0'
       language: elixir
       before_install: cd elixir
-      script: mix test
+      script: mix test --trace
 
     - name: "F#"
       language: csharp
