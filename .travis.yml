@@ -20,7 +20,7 @@ matrix:
       script: elm make --yes Main.elm
 
     - name: "Elixir"
-      elixir: '1.7.0'
+      elixir: '1.7.4'
       language: elixir
       before_install: cd elixir
       script: mix test --trace
