@@ -10,8 +10,8 @@ defmodule QuizzyClientTest do
   Please note that in this test we make use of raw
   QuizzyClient features and also make use of a hard
   coded file path. You may find value in extracting
-  some of these aspects into your production code
-  eventually.
+  some of these aspects into functions in the production
+  code eventually.
   """
   test "that number of events in stream 0 is 4" do
     file = File.read!("../data/0.json")
