@@ -7,6 +7,7 @@ Secondly, in order to verify your solutions, you can choose to build tests for y
 Both approaches are supported by this code base and briefly described in the following sections.
 
 ## run with a local installation
+
 This assumes that you have Elixir setup on your machine, the minimum required version is Elixir v1.7
 
 From within this folder, install the required dependencies:
@@ -22,6 +23,7 @@ Or, run the production code and verify its output like so:
 `mix run -e QuizzyClient.main`
 
 ## run with docker-compose
+
 Provided you have docker installed and running in a reasonably recent version, you can use `docker-compose` to fetch the latest, official Elixir image and run the production code (QuizzyClient.main) like so:
 
 `docker-compose up`
