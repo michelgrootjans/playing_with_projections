@@ -3,7 +3,7 @@
 `dotnet restore`
 
 ## Run code
-`dotnet run`
+`dotnet run ..\data\0.json`
 
 # from docker
 docker-compose up
