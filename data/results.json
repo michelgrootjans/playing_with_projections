@@ -1,0 +1,1856 @@
+{
+  "../data/0.json": {
+    "numberOfEvents": 4,
+    "numberOfRegistredPlayers": 1,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2016-09",
+        "registered_players": 1
+      }
+    ],
+    "mostPopularQuizs": [],
+    "inactivePlayers": [],
+    "activePlayers": []
+  },
+  "../data/1.json": {
+    "numberOfEvents": 30,
+    "numberOfRegistredPlayers": 2,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2016-05",
+        "registered_players": 2
+      }
+    ],
+    "mostPopularQuizs": [],
+    "inactivePlayers": [],
+    "activePlayers": []
+  },
+  "../data/10_2015_01_2016_01.json": {
+    "numberOfEvents": 48960,
+    "numberOfRegistredPlayers": 254,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-03",
+        "registered_players": 26
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 24
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 12
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 25
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 18
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 20
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 30
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 22
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 25
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 52
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "700",
+        "times_played": 44,
+        "quiz_title": "E5841"
+      },
+      {
+        "quiz_id": "821",
+        "times_played": 30,
+        "quiz_title": "4558D"
+      },
+      {
+        "quiz_id": "682",
+        "times_played": 28,
+        "quiz_title": "08D98"
+      },
+      {
+        "quiz_id": "756",
+        "times_played": 27,
+        "quiz_title": "2823F"
+      },
+      {
+        "quiz_id": "832",
+        "times_played": 27,
+        "quiz_title": "7250E"
+      },
+      {
+        "quiz_id": "593",
+        "times_played": 27,
+        "quiz_title": "ACC3E"
+      },
+      {
+        "quiz_id": "711",
+        "times_played": 26,
+        "quiz_title": "60815"
+      },
+      {
+        "quiz_id": "848",
+        "times_played": 20,
+        "quiz_title": "362E8"
+      },
+      {
+        "quiz_id": "527",
+        "times_played": 17,
+        "quiz_title": "13F32"
+      },
+      {
+        "quiz_id": "859",
+        "times_played": 17,
+        "quiz_title": "2A084"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "477",
+        "player_name": "74071",
+        "games_played": 300
+      },
+      {
+        "player_id": "489",
+        "player_name": "854D9",
+        "games_played": 300
+      },
+      {
+        "player_id": "467",
+        "player_name": "AB817",
+        "games_played": 300
+      },
+      {
+        "player_id": "23",
+        "player_name": "37693",
+        "games_played": 289
+      },
+      {
+        "player_id": "1",
+        "player_name": "C4CA4",
+        "games_played": 286
+      },
+      {
+        "player_id": "43",
+        "player_name": "17E62",
+        "games_played": 284
+      },
+      {
+        "player_id": "37",
+        "player_name": "A5BFC",
+        "games_played": 280
+      },
+      {
+        "player_id": "61",
+        "player_name": "7F39F",
+        "games_played": 261
+      },
+      {
+        "player_id": "101",
+        "player_name": "38B3E",
+        "games_played": 239
+      },
+      {
+        "player_id": "85",
+        "player_name": "3EF81",
+        "games_played": 239
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "477",
+        "player_name": "74071",
+        "games_played": 300
+      },
+      {
+        "player_id": "489",
+        "player_name": "854D9",
+        "games_played": 300
+      },
+      {
+        "player_id": "467",
+        "player_name": "AB817",
+        "games_played": 300
+      },
+      {
+        "player_id": "23",
+        "player_name": "37693",
+        "games_played": 289
+      },
+      {
+        "player_id": "1",
+        "player_name": "C4CA4",
+        "games_played": 286
+      },
+      {
+        "player_id": "43",
+        "player_name": "17E62",
+        "games_played": 284
+      },
+      {
+        "player_id": "37",
+        "player_name": "A5BFC",
+        "games_played": 280
+      },
+      {
+        "player_id": "61",
+        "player_name": "7F39F",
+        "games_played": 261
+      },
+      {
+        "player_id": "101",
+        "player_name": "38B3E",
+        "games_played": 239
+      },
+      {
+        "player_id": "85",
+        "player_name": "3EF81",
+        "games_played": 239
+      }
+    ]
+  },
+  "../data/2.json": {
+    "numberOfEvents": 43727,
+    "numberOfRegistredPlayers": 218,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2016-04",
+        "registered_players": 2
+      },
+      {
+        "month": "2016-05",
+        "registered_players": 1
+      },
+      {
+        "month": "2016-06",
+        "registered_players": 8
+      },
+      {
+        "month": "2016-07",
+        "registered_players": 16
+      },
+      {
+        "month": "2016-08",
+        "registered_players": 27
+      },
+      {
+        "month": "2016-09",
+        "registered_players": 64
+      },
+      {
+        "month": "2016-10",
+        "registered_players": 52
+      },
+      {
+        "month": "2016-11",
+        "registered_players": 28
+      },
+      {
+        "month": "2016-12",
+        "registered_players": 16
+      },
+      {
+        "month": "2017-01",
+        "registered_players": 3
+      },
+      {
+        "month": "2017-03",
+        "registered_players": 1
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "63cd41a8-9c65-4bec-b7bb-261dc76466eb",
+        "times_played": 14,
+        "quiz_title": "Gotta catch em all"
+      },
+      {
+        "quiz_id": "a74a6ce4-99e5-413f-a963-b9b701ada30d",
+        "times_played": 13,
+        "quiz_title": "Gotta catch em all"
+      },
+      {
+        "quiz_id": "870dc098-c6b9-4806-a50a-5dc0e50fe435",
+        "times_played": 12,
+        "quiz_title": "Superhero quiz"
+      },
+      {
+        "quiz_id": "f8e2bbf6-a028-41c1-8d0d-c67294b20abb",
+        "times_played": 12,
+        "quiz_title": "Wedge Antilles's quiz"
+      },
+      {
+        "quiz_id": "cf193d03-bdf6-4290-a097-be1d39d9355f",
+        "times_played": 11,
+        "quiz_title": "All about Tyrion Lannister"
+      },
+      {
+        "quiz_id": "8f513042-b07c-42c9-b5c3-7fd6a0996fe0",
+        "times_played": 11,
+        "quiz_title": "Only for Neimoidians"
+      },
+      {
+        "quiz_id": "6f368abd-7a9f-4dfb-8063-d9cd787cdd18",
+        "times_played": 11,
+        "quiz_title": "Superpowers!"
+      },
+      {
+        "quiz_id": "85d4c838-4d1e-4f1b-a4a7-9b7986e08540",
+        "times_played": 10,
+        "quiz_title": "All about Bronn"
+      },
+      {
+        "quiz_id": "cd4c639a-418c-4553-8782-db31376793c8",
+        "times_played": 10,
+        "quiz_title": "Gotta catch em all"
+      },
+      {
+        "quiz_id": "2b691828-1c90-4cdf-a53c-fcf8bcbcc3be",
+        "times_played": 10,
+        "quiz_title": "Superhero quiz"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "da96c160-4522-4228-9c78-099696a56f92",
+        "player_name": "Hillard",
+        "games_played": 145
+      },
+      {
+        "player_id": "921ac81d-da0d-4e22-8db8-396b68a968f4",
+        "player_name": "Frederique",
+        "games_played": 119
+      },
+      {
+        "player_id": "98010880-d65b-4d7d-b7ce-a3e15c760ce4",
+        "player_name": "Bertrand",
+        "games_played": 104
+      },
+      {
+        "player_id": "b992a6e3-b6e1-480b-9710-9788a84b8e0f",
+        "player_name": "Dorris",
+        "games_played": 104
+      },
+      {
+        "player_id": "b900a7a1-c2ee-4142-ab97-0e4d42b9d656",
+        "player_name": "Greta",
+        "games_played": 103
+      },
+      {
+        "player_id": "9d0528c9-e4d9-4351-9808-3b6d325f730b",
+        "player_name": "Jany",
+        "games_played": 103
+      },
+      {
+        "player_id": "7c2b2ca0-34c6-4b30-adbb-b32c4cfb9751",
+        "player_name": "Jocelyn",
+        "games_played": 95
+      },
+      {
+        "player_id": "41ee2085-10b5-4d2c-85dd-9868d27cd5f1",
+        "player_name": "Linnea",
+        "games_played": 84
+      },
+      {
+        "player_id": "b83a1211-ec26-466c-9ad3-0072d43a9503",
+        "player_name": "Jonas",
+        "games_played": 81
+      },
+      {
+        "player_id": "5ddb6d38-eb57-4d37-a8f0-9026f7662a6e",
+        "player_name": "Maud",
+        "games_played": 78
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "da96c160-4522-4228-9c78-099696a56f92",
+        "player_name": "Hillard",
+        "games_played": 145
+      },
+      {
+        "player_id": "921ac81d-da0d-4e22-8db8-396b68a968f4",
+        "player_name": "Frederique",
+        "games_played": 119
+      },
+      {
+        "player_id": "98010880-d65b-4d7d-b7ce-a3e15c760ce4",
+        "player_name": "Bertrand",
+        "games_played": 104
+      },
+      {
+        "player_id": "b992a6e3-b6e1-480b-9710-9788a84b8e0f",
+        "player_name": "Dorris",
+        "games_played": 104
+      },
+      {
+        "player_id": "b900a7a1-c2ee-4142-ab97-0e4d42b9d656",
+        "player_name": "Greta",
+        "games_played": 103
+      },
+      {
+        "player_id": "9d0528c9-e4d9-4351-9808-3b6d325f730b",
+        "player_name": "Jany",
+        "games_played": 103
+      },
+      {
+        "player_id": "d3a11123-e135-4ba5-ae6e-ac329bfcb4b8",
+        "player_name": "Orion",
+        "games_played": 100
+      },
+      {
+        "player_id": "3fd65d7f-52de-4065-8e1b-e8803c1a03b7",
+        "player_name": "Aditya",
+        "games_played": 98
+      },
+      {
+        "player_id": "b1d9e9ac-007c-47fb-818e-7e0f508f0816",
+        "player_name": "Carmen",
+        "games_played": 97
+      },
+      {
+        "player_id": "7c2b2ca0-34c6-4b30-adbb-b32c4cfb9751",
+        "player_name": "Jocelyn",
+        "games_played": 95
+      }
+    ]
+  },
+  "../data/4_2015_01_2017_01.json": {
+    "numberOfEvents": 85778,
+    "numberOfRegistredPlayers": 176,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-01",
+        "registered_players": 7
+      },
+      {
+        "month": "2015-02",
+        "registered_players": 5
+      },
+      {
+        "month": "2015-03",
+        "registered_players": 4
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 9
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 4
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 7
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 2
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 10
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 10
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 2
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 12
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 12
+      },
+      {
+        "month": "2016-01",
+        "registered_players": 12
+      },
+      {
+        "month": "2016-02",
+        "registered_players": 13
+      },
+      {
+        "month": "2016-03",
+        "registered_players": 14
+      },
+      {
+        "month": "2016-04",
+        "registered_players": 9
+      },
+      {
+        "month": "2016-05",
+        "registered_players": 17
+      },
+      {
+        "month": "2016-06",
+        "registered_players": 6
+      },
+      {
+        "month": "2016-07",
+        "registered_players": 3
+      },
+      {
+        "month": "2016-08",
+        "registered_players": 3
+      },
+      {
+        "month": "2016-09",
+        "registered_players": 7
+      },
+      {
+        "month": "2016-10",
+        "registered_players": 3
+      },
+      {
+        "month": "2016-12",
+        "registered_players": 5
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "470",
+        "times_played": 82,
+        "quiz_title": "26337"
+      },
+      {
+        "quiz_id": "605",
+        "times_played": 49,
+        "quiz_title": "C361B"
+      },
+      {
+        "quiz_id": "396",
+        "times_played": 33,
+        "quiz_title": "F8C1F"
+      },
+      {
+        "quiz_id": "440",
+        "times_played": 31,
+        "quiz_title": "A8ABB"
+      },
+      {
+        "quiz_id": "553",
+        "times_played": 28,
+        "quiz_title": "F3876"
+      },
+      {
+        "quiz_id": "363",
+        "times_played": 23,
+        "quiz_title": "00411"
+      },
+      {
+        "quiz_id": "463",
+        "times_played": 22,
+        "quiz_title": "428FC"
+      },
+      {
+        "quiz_id": "636",
+        "times_played": 18,
+        "quiz_title": "C5AB0"
+      },
+      {
+        "quiz_id": "625",
+        "times_played": 16,
+        "quiz_title": "23350"
+      },
+      {
+        "quiz_id": "598",
+        "times_played": 13,
+        "quiz_title": "6ACA9"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "115",
+        "player_name": "2B449",
+        "games_played": 285
+      },
+      {
+        "player_id": "81",
+        "player_name": "43EC5",
+        "games_played": 285
+      },
+      {
+        "player_id": "91",
+        "player_name": "54229",
+        "games_played": 285
+      },
+      {
+        "player_id": "111",
+        "player_name": "698D5",
+        "games_played": 285
+      },
+      {
+        "player_id": "95",
+        "player_name": "812B4",
+        "games_played": 285
+      },
+      {
+        "player_id": "93",
+        "player_name": "98DCE",
+        "games_played": 285
+      },
+      {
+        "player_id": "87",
+        "player_name": "C7E12",
+        "games_played": 285
+      },
+      {
+        "player_id": "97",
+        "player_name": "E2EF5",
+        "games_played": 285
+      },
+      {
+        "player_id": "119",
+        "player_name": "07E1C",
+        "games_played": 279
+      },
+      {
+        "player_id": "117",
+        "player_name": "EB160",
+        "games_played": 279
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "27",
+        "player_name": "02E74",
+        "games_played": 322
+      },
+      {
+        "player_id": "19",
+        "player_name": "1F0E3",
+        "games_played": 322
+      },
+      {
+        "player_id": "11",
+        "player_name": "6512B",
+        "games_played": 322
+      },
+      {
+        "player_id": "47",
+        "player_name": "67C6A",
+        "games_played": 322
+      },
+      {
+        "player_id": "25",
+        "player_name": "8E296",
+        "games_played": 322
+      },
+      {
+        "player_id": "37",
+        "player_name": "A5BFC",
+        "games_played": 322
+      },
+      {
+        "player_id": "1",
+        "player_name": "C4CA4",
+        "games_played": 322
+      },
+      {
+        "player_id": "5",
+        "player_name": "E4DA3",
+        "games_played": 322
+      },
+      {
+        "player_id": "49",
+        "player_name": "F457C",
+        "games_played": 322
+      },
+      {
+        "player_id": "57",
+        "player_name": "72B32",
+        "games_played": 320
+      }
+    ]
+  },
+  "../data/5_2015_01_2017_01.json": {
+    "numberOfEvents": 104712,
+    "numberOfRegistredPlayers": 158,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-01",
+        "registered_players": 5
+      },
+      {
+        "month": "2015-02",
+        "registered_players": 5
+      },
+      {
+        "month": "2015-03",
+        "registered_players": 5
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 6
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 6
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 4
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 5
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 6
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 3
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 4
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 9
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 12
+      },
+      {
+        "month": "2016-01",
+        "registered_players": 8
+      },
+      {
+        "month": "2016-02",
+        "registered_players": 8
+      },
+      {
+        "month": "2016-03",
+        "registered_players": 10
+      },
+      {
+        "month": "2016-04",
+        "registered_players": 11
+      },
+      {
+        "month": "2016-05",
+        "registered_players": 12
+      },
+      {
+        "month": "2016-06",
+        "registered_players": 9
+      },
+      {
+        "month": "2016-07",
+        "registered_players": 6
+      },
+      {
+        "month": "2016-08",
+        "registered_players": 5
+      },
+      {
+        "month": "2016-09",
+        "registered_players": 6
+      },
+      {
+        "month": "2016-10",
+        "registered_players": 5
+      },
+      {
+        "month": "2016-11",
+        "registered_players": 8
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "362",
+        "times_played": 117,
+        "quiz_title": "C3E87"
+      },
+      {
+        "quiz_id": "697",
+        "times_played": 54,
+        "quiz_title": "8A0E1"
+      },
+      {
+        "quiz_id": "344",
+        "times_played": 34,
+        "quiz_title": "B3967"
+      },
+      {
+        "quiz_id": "610",
+        "times_played": 32,
+        "quiz_title": "00AC8"
+      },
+      {
+        "quiz_id": "426",
+        "times_played": 30,
+        "quiz_title": "6ECBD"
+      },
+      {
+        "quiz_id": "617",
+        "times_played": 28,
+        "quiz_title": "5D44E"
+      },
+      {
+        "quiz_id": "508",
+        "times_played": 27,
+        "quiz_title": "389BC"
+      },
+      {
+        "quiz_id": "415",
+        "times_played": 27,
+        "quiz_title": "42E7A"
+      },
+      {
+        "quiz_id": "794",
+        "times_played": 25,
+        "quiz_title": "82489"
+      },
+      {
+        "quiz_id": "851",
+        "times_played": 24,
+        "quiz_title": "92FB0"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "19",
+        "player_name": "1F0E3",
+        "games_played": 506
+      },
+      {
+        "player_id": "3",
+        "player_name": "ECCBC",
+        "games_played": 504
+      },
+      {
+        "player_id": "29",
+        "player_name": "6EA9A",
+        "games_played": 486
+      },
+      {
+        "player_id": "33",
+        "player_name": "182BE",
+        "games_played": 479
+      },
+      {
+        "player_id": "31",
+        "player_name": "C16A5",
+        "games_played": 469
+      },
+      {
+        "player_id": "47",
+        "player_name": "67C6A",
+        "games_played": 457
+      },
+      {
+        "player_id": "49",
+        "player_name": "F457C",
+        "games_played": 457
+      },
+      {
+        "player_id": "53",
+        "player_name": "D82C8",
+        "games_played": 450
+      },
+      {
+        "player_id": "65",
+        "player_name": "FC490",
+        "games_played": 448
+      },
+      {
+        "player_id": "67",
+        "player_name": "735B9",
+        "games_played": 441
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "19",
+        "player_name": "1F0E3",
+        "games_played": 506
+      },
+      {
+        "player_id": "3",
+        "player_name": "ECCBC",
+        "games_played": 504
+      },
+      {
+        "player_id": "29",
+        "player_name": "6EA9A",
+        "games_played": 486
+      },
+      {
+        "player_id": "33",
+        "player_name": "182BE",
+        "games_played": 479
+      },
+      {
+        "player_id": "31",
+        "player_name": "C16A5",
+        "games_played": 469
+      },
+      {
+        "player_id": "47",
+        "player_name": "67C6A",
+        "games_played": 457
+      },
+      {
+        "player_id": "49",
+        "player_name": "F457C",
+        "games_played": 457
+      },
+      {
+        "player_id": "53",
+        "player_name": "D82C8",
+        "games_played": 450
+      },
+      {
+        "player_id": "65",
+        "player_name": "FC490",
+        "games_played": 448
+      },
+      {
+        "player_id": "67",
+        "player_name": "735B9",
+        "games_played": 441
+      }
+    ]
+  },
+  "../data/6_2015_01_2017_01.json": {
+    "numberOfEvents": 240663,
+    "numberOfRegistredPlayers": 262,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-01",
+        "registered_players": 8
+      },
+      {
+        "month": "2015-02",
+        "registered_players": 9
+      },
+      {
+        "month": "2015-03",
+        "registered_players": 14
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 16
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 15
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 8
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 15
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 9
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 12
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 9
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 12
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 10
+      },
+      {
+        "month": "2016-01",
+        "registered_players": 7
+      },
+      {
+        "month": "2016-02",
+        "registered_players": 12
+      },
+      {
+        "month": "2016-03",
+        "registered_players": 11
+      },
+      {
+        "month": "2016-04",
+        "registered_players": 10
+      },
+      {
+        "month": "2016-05",
+        "registered_players": 9
+      },
+      {
+        "month": "2016-06",
+        "registered_players": 5
+      },
+      {
+        "month": "2016-07",
+        "registered_players": 12
+      },
+      {
+        "month": "2016-08",
+        "registered_players": 13
+      },
+      {
+        "month": "2016-09",
+        "registered_players": 14
+      },
+      {
+        "month": "2016-10",
+        "registered_players": 11
+      },
+      {
+        "month": "2016-11",
+        "registered_players": 7
+      },
+      {
+        "month": "2016-12",
+        "registered_players": 14
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "825",
+        "times_played": 35,
+        "quiz_title": "D554F"
+      },
+      {
+        "quiz_id": "616",
+        "times_played": 34,
+        "quiz_title": "7750C"
+      },
+      {
+        "quiz_id": "856",
+        "times_played": 29,
+        "quiz_title": "8C235"
+      },
+      {
+        "quiz_id": "704",
+        "times_played": 29,
+        "quiz_title": "F64EA"
+      },
+      {
+        "quiz_id": "697",
+        "times_played": 28,
+        "quiz_title": "8A0E1"
+      },
+      {
+        "quiz_id": "972",
+        "times_played": 28,
+        "quiz_title": "C22AB"
+      },
+      {
+        "quiz_id": "679",
+        "times_played": 28,
+        "quiz_title": "CA9C2"
+      },
+      {
+        "quiz_id": "556",
+        "times_played": 25,
+        "quiz_title": "11B92"
+      },
+      {
+        "quiz_id": "1006",
+        "times_played": 23,
+        "quiz_title": "92464"
+      },
+      {
+        "quiz_id": "882",
+        "times_played": 22,
+        "quiz_title": "6C3CF"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "69",
+        "player_name": "14BFA",
+        "games_played": 522
+      },
+      {
+        "player_id": "103",
+        "player_name": "6974C",
+        "games_played": 521
+      },
+      {
+        "player_id": "39",
+        "player_name": "D67D8",
+        "games_played": 520
+      },
+      {
+        "player_id": "27",
+        "player_name": "02E74",
+        "games_played": 519
+      },
+      {
+        "player_id": "51",
+        "player_name": "28380",
+        "games_played": 518
+      },
+      {
+        "player_id": "101",
+        "player_name": "38B3E",
+        "games_played": 518
+      },
+      {
+        "player_id": "15",
+        "player_name": "9BF31",
+        "games_played": 518
+      },
+      {
+        "player_id": "3",
+        "player_name": "ECCBC",
+        "games_played": 518
+      },
+      {
+        "player_id": "111",
+        "player_name": "698D5",
+        "games_played": 517
+      },
+      {
+        "player_id": "89",
+        "player_name": "76479",
+        "games_played": 517
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "69",
+        "player_name": "14BFA",
+        "games_played": 522
+      },
+      {
+        "player_id": "103",
+        "player_name": "6974C",
+        "games_played": 521
+      },
+      {
+        "player_id": "39",
+        "player_name": "D67D8",
+        "games_played": 520
+      },
+      {
+        "player_id": "27",
+        "player_name": "02E74",
+        "games_played": 519
+      },
+      {
+        "player_id": "51",
+        "player_name": "28380",
+        "games_played": 518
+      },
+      {
+        "player_id": "101",
+        "player_name": "38B3E",
+        "games_played": 518
+      },
+      {
+        "player_id": "15",
+        "player_name": "9BF31",
+        "games_played": 518
+      },
+      {
+        "player_id": "3",
+        "player_name": "ECCBC",
+        "games_played": 518
+      },
+      {
+        "player_id": "111",
+        "player_name": "698D5",
+        "games_played": 517
+      },
+      {
+        "player_id": "89",
+        "player_name": "76479",
+        "games_played": 517
+      }
+    ]
+  },
+  "../data/7_2015_01_2017_01.json": {
+    "numberOfEvents": 432642,
+    "numberOfRegistredPlayers": 948,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-03",
+        "registered_players": 18
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 19
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 8
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 30
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 26
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 13
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 20
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 14
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 49
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 57
+      },
+      {
+        "month": "2016-01",
+        "registered_players": 49
+      },
+      {
+        "month": "2016-02",
+        "registered_players": 34
+      },
+      {
+        "month": "2016-03",
+        "registered_players": 42
+      },
+      {
+        "month": "2016-04",
+        "registered_players": 105
+      },
+      {
+        "month": "2016-05",
+        "registered_players": 66
+      },
+      {
+        "month": "2016-06",
+        "registered_players": 105
+      },
+      {
+        "month": "2016-07",
+        "registered_players": 53
+      },
+      {
+        "month": "2016-08",
+        "registered_players": 59
+      },
+      {
+        "month": "2016-09",
+        "registered_players": 49
+      },
+      {
+        "month": "2016-10",
+        "registered_players": 49
+      },
+      {
+        "month": "2016-11",
+        "registered_players": 62
+      },
+      {
+        "month": "2016-12",
+        "registered_players": 21
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "2125",
+        "times_played": 102,
+        "quiz_title": "A0128"
+      },
+      {
+        "quiz_id": "2089",
+        "times_played": 101,
+        "quiz_title": "BF424"
+      },
+      {
+        "quiz_id": "1976",
+        "times_played": 92,
+        "quiz_title": "DD055"
+      },
+      {
+        "quiz_id": "2600",
+        "times_played": 86,
+        "quiz_title": "32B99"
+      },
+      {
+        "quiz_id": "2528",
+        "times_played": 82,
+        "quiz_title": "6BE93"
+      },
+      {
+        "quiz_id": "2666",
+        "times_played": 77,
+        "quiz_title": "1102A"
+      },
+      {
+        "quiz_id": "3217",
+        "times_played": 64,
+        "quiz_title": "52EDC"
+      },
+      {
+        "quiz_id": "2827",
+        "times_played": 59,
+        "quiz_title": "09B69"
+      },
+      {
+        "quiz_id": "3334",
+        "times_played": 55,
+        "quiz_title": "33131"
+      },
+      {
+        "quiz_id": "3354",
+        "times_played": 54,
+        "quiz_title": "D2CD3"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "1895",
+        "player_name": "059FD",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1863",
+        "player_name": "09FB0",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1891",
+        "player_name": "13168",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1879",
+        "player_name": "44A2E",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1865",
+        "player_name": "69D1F",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1875",
+        "player_name": "7E9E3",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1867",
+        "player_name": "A19AC",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1881",
+        "player_name": "B4568",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1877",
+        "player_name": "F31B2",
+        "games_played": 2441
+      },
+      {
+        "player_id": "89",
+        "player_name": "76479",
+        "games_played": 907
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "1895",
+        "player_name": "059FD",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1863",
+        "player_name": "09FB0",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1891",
+        "player_name": "13168",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1879",
+        "player_name": "44A2E",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1865",
+        "player_name": "69D1F",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1875",
+        "player_name": "7E9E3",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1867",
+        "player_name": "A19AC",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1881",
+        "player_name": "B4568",
+        "games_played": 2441
+      },
+      {
+        "player_id": "1877",
+        "player_name": "F31B2",
+        "games_played": 2441
+      },
+      {
+        "player_id": "89",
+        "player_name": "76479",
+        "games_played": 907
+      }
+    ]
+  },
+  "../data/8_2015_01_2016_01.json": {
+    "numberOfEvents": 62479,
+    "numberOfRegistredPlayers": 242,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-03",
+        "registered_players": 24
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 17
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 8
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 19
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 21
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 21
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 19
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 20
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 37
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 56
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "485",
+        "times_played": 80,
+        "quiz_title": "218A0"
+      },
+      {
+        "quiz_id": "626",
+        "times_played": 54,
+        "quiz_title": "45645"
+      },
+      {
+        "quiz_id": "691",
+        "times_played": 31,
+        "quiz_title": "10A5A"
+      },
+      {
+        "quiz_id": "764",
+        "times_played": 31,
+        "quiz_title": "5807A"
+      },
+      {
+        "quiz_id": "813",
+        "times_played": 31,
+        "quiz_title": "E0CF1"
+      },
+      {
+        "quiz_id": "496",
+        "times_played": 29,
+        "quiz_title": "B534B"
+      },
+      {
+        "quiz_id": "561",
+        "times_played": 27,
+        "quiz_title": "58AE7"
+      },
+      {
+        "quiz_id": "523",
+        "times_played": 25,
+        "quiz_title": "2BB23"
+      },
+      {
+        "quiz_id": "643",
+        "times_played": 22,
+        "quiz_title": "9B698"
+      },
+      {
+        "quiz_id": "804",
+        "times_played": 22,
+        "quiz_title": "DC568"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "463",
+        "player_name": "428FC",
+        "games_played": 426
+      },
+      {
+        "player_id": "453",
+        "player_name": "49AE4",
+        "games_played": 426
+      },
+      {
+        "player_id": "475",
+        "player_name": "5EF0B",
+        "games_played": 426
+      },
+      {
+        "player_id": "465",
+        "player_name": "68CE1",
+        "games_played": 426
+      },
+      {
+        "player_id": "455",
+        "player_name": "821FA",
+        "games_played": 426
+      },
+      {
+        "player_id": "477",
+        "player_name": "74071",
+        "games_played": 407
+      },
+      {
+        "player_id": "481",
+        "player_name": "9461C",
+        "games_played": 407
+      },
+      {
+        "player_id": "479",
+        "player_name": "D18F6",
+        "games_played": 407
+      },
+      {
+        "player_id": "39",
+        "player_name": "D67D8",
+        "games_played": 370
+      },
+      {
+        "player_id": "37",
+        "player_name": "A5BFC",
+        "games_played": 368
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "463",
+        "player_name": "428FC",
+        "games_played": 426
+      },
+      {
+        "player_id": "453",
+        "player_name": "49AE4",
+        "games_played": 426
+      },
+      {
+        "player_id": "475",
+        "player_name": "5EF0B",
+        "games_played": 426
+      },
+      {
+        "player_id": "465",
+        "player_name": "68CE1",
+        "games_played": 426
+      },
+      {
+        "player_id": "455",
+        "player_name": "821FA",
+        "games_played": 426
+      },
+      {
+        "player_id": "477",
+        "player_name": "74071",
+        "games_played": 407
+      },
+      {
+        "player_id": "481",
+        "player_name": "9461C",
+        "games_played": 407
+      },
+      {
+        "player_id": "479",
+        "player_name": "D18F6",
+        "games_played": 407
+      },
+      {
+        "player_id": "39",
+        "player_name": "D67D8",
+        "games_played": 370
+      },
+      {
+        "player_id": "37",
+        "player_name": "A5BFC",
+        "games_played": 368
+      }
+    ]
+  },
+  "../data/9_2015_01_2016_01.json": {
+    "numberOfEvents": 15933,
+    "numberOfRegistredPlayers": 206,
+    "numberOfRegistredPlayersPerMonth": [
+      {
+        "month": "2015-03",
+        "registered_players": 24
+      },
+      {
+        "month": "2015-04",
+        "registered_players": 20
+      },
+      {
+        "month": "2015-05",
+        "registered_players": 10
+      },
+      {
+        "month": "2015-06",
+        "registered_players": 18
+      },
+      {
+        "month": "2015-07",
+        "registered_players": 25
+      },
+      {
+        "month": "2015-08",
+        "registered_players": 21
+      },
+      {
+        "month": "2015-09",
+        "registered_players": 6
+      },
+      {
+        "month": "2015-10",
+        "registered_players": 15
+      },
+      {
+        "month": "2015-11",
+        "registered_players": 18
+      },
+      {
+        "month": "2015-12",
+        "registered_players": 49
+      }
+    ],
+    "mostPopularQuizs": [
+      {
+        "quiz_id": "449",
+        "times_played": 27,
+        "quiz_title": "D61E4"
+      },
+      {
+        "quiz_id": "431",
+        "times_played": 24,
+        "quiz_title": "66368"
+      },
+      {
+        "quiz_id": "481",
+        "times_played": 18,
+        "quiz_title": "9461C"
+      },
+      {
+        "quiz_id": "474",
+        "times_played": 15,
+        "quiz_title": "25DDC"
+      },
+      {
+        "quiz_id": "558",
+        "times_played": 5,
+        "quiz_title": "1BB91"
+      },
+      {
+        "quiz_id": "467",
+        "times_played": 2,
+        "quiz_title": "AB817"
+      },
+      {
+        "quiz_id": "420",
+        "times_played": 2,
+        "quiz_title": "B6F04"
+      },
+      {
+        "quiz_id": "530",
+        "times_played": 2,
+        "quiz_title": "D64A3"
+      },
+      {
+        "quiz_id": "551",
+        "times_played": 1,
+        "quiz_title": "7F24D"
+      },
+      {
+        "quiz_id": "544",
+        "times_played": 1,
+        "quiz_title": "97E85"
+      }
+    ],
+    "inactivePlayers": [
+      {
+        "player_id": "119",
+        "player_name": "07E1C",
+        "games_played": 42
+      },
+      {
+        "player_id": "243",
+        "player_name": "CB70A",
+        "games_played": 42
+      },
+      {
+        "player_id": "241",
+        "player_name": "F340F",
+        "games_played": 42
+      },
+      {
+        "player_id": "153",
+        "player_name": "B3E3E",
+        "games_played": 40
+      },
+      {
+        "player_id": "129",
+        "player_name": "D1F49",
+        "games_played": 39
+      },
+      {
+        "player_id": "363",
+        "player_name": "00411",
+        "games_played": 37
+      },
+      {
+        "player_id": "285",
+        "player_name": "0E019",
+        "games_played": 37
+      },
+      {
+        "player_id": "283",
+        "player_name": "0F49C",
+        "games_played": 37
+      },
+      {
+        "player_id": "301",
+        "player_name": "34ED0",
+        "games_played": 37
+      },
+      {
+        "player_id": "337",
+        "player_name": "357A6",
+        "games_played": 37
+      }
+    ],
+    "activePlayers": [
+      {
+        "player_id": "43",
+        "player_name": "17E62",
+        "games_played": 97
+      },
+      {
+        "player_id": "41",
+        "player_name": "3416A",
+        "games_played": 97
+      },
+      {
+        "player_id": "125",
+        "player_name": "3DEF1",
+        "games_played": 97
+      },
+      {
+        "player_id": "391",
+        "player_name": "5A4B2",
+        "games_played": 97
+      },
+      {
+        "player_id": "387",
+        "player_name": "8EFB1",
+        "games_played": 97
+      },
+      {
+        "player_id": "409",
+        "player_name": "A96B6",
+        "games_played": 97
+      },
+      {
+        "player_id": "403",
+        "player_name": "BBF94",
+        "games_played": 97
+      },
+      {
+        "player_id": "383",
+        "player_name": "BEED1",
+        "games_played": 97
+      },
+      {
+        "player_id": "389",
+        "player_name": "C86A7",
+        "games_played": 97
+      },
+      {
+        "player_id": "377",
+        "player_name": "D34AB",
+        "games_played": 97
+      }
+    ]
+  }
+}
